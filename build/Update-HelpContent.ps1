@@ -180,7 +180,13 @@ Try{
     Write-Verbose "ModulePsd1   - $ModulePsd1"
 
         if (Test-Path -Path $ModulePsd1 ) {
-            Import-Module -Name $ModulePsd1 -Force -Verbose:$false
+
+            Write-Verbose "Importing Module - $ModuleName"
+
+            Import-Module -Name $ModulePsd1 -Force #-Verbose:$false
+
+            Write-Verbose "Getting Commands"
+
             $Commands = Get-Command -Module $ModuleName -ErrorAction Stop | Where-Object {$_.CommandType -eq 'Function'} | Sort-Object Name
         }
         else{

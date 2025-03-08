@@ -183,15 +183,22 @@ Try{
 
     Write-Verbose "3"
 
-    ForEach ($folder in $docFolders) {
+    Write-Verbose "HelpDocs     - $HelpDocsPath"
+    Write-Verbose "DocFolders   - $DocFolders"
 
-        if ( ($folder -ne $helpDocsPath) -and (Test-Path -Path $folder -PathType Container) ) {
-            Remove-Item -Path $folder -Force -Recurse
-            New-Item -Path $folder -ItemType Directory > $null
+    ForEach ($Folder in $DocFolders) {
+        Write-Verbose "Folder   - $Folder"
+    }
+
+    ForEach ($Folder in $DocFolders) {
+
+        if ( ($Folder -ne $HelpDocsPath) -and (Test-Path -Path $Folder -PathType Container) ) {
+            Remove-Item -Path $Folder -Force -Recurse
+            New-Item -Path $Folder -ItemType Directory > $null
         }
         else{
-            if ( (Test-Path -Path $folder -PathType Container) -eq $false ) {
-                New-Item -Path $folder -ItemType Directory > $null
+            if ( (Test-Path -Path $Folder -PathType Container) -eq $false ) {
+                New-Item -Path $Folder -ItemType Directory > $null
             }
         }
 

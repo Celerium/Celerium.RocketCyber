@@ -183,10 +183,10 @@ Try{
 
     Write-Verbose "3"
 
-    ForEach ($Folder in $DocFolders) {
+    foreach ($Folder in $DocFolders) {
 
-        $Folder
-        $HelpDocsPath
+        Write-Verbose "$Folder"
+        Write-Verbose "$HelpDocsPath"
 
         if ( ($Folder -ne $HelpDocsPath) -and (Test-Path -Path $Folder -PathType Container) ) {
             Remove-Item -Path $Folder -Force -Recurse

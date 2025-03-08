@@ -1,5 +1,5 @@
 ﻿Category,EndpointUri,Method,Function,Complete,Notes
-Accounts,/account,GET,Get-RocketCyberAccount,YES,
+Account,/account,GET,Get-RocketCyberAccount,YES,
 Agents,/agents,GET,Get-RocketCyberAgent,YES,
 Apps,/apps,GET,Get-RocketCyberApp,YES,
 Defender,/defender,GET,Get-RocketCyberDefender,YES,

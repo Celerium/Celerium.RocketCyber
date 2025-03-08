@@ -148,7 +148,7 @@ $ExternalHelpCab    = Join-Path -Path $HelpDocsPath -ChildPath "cab"
 
 $DocFolders = $HelpDocsPath,$TempFolder,$SiteStructureFolder,$ExternalHelp,$ExternalHelpCab
 
-$TemplatePages = 'DELETE.md', 'GET.md', 'index.md', 'POST.md', 'PUT.md'
+$TemplatePages = 'DELETE.md', 'GET.md', 'Index.md', 'POST.md', 'PUT.md'
 
 Try{
 

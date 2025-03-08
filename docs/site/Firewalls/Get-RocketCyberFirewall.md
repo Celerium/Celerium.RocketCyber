@@ -250,5 +250,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Firewall/Get-RocketCyberFirewall.html](https://celerium.github.io/Celerium.RocketCyber/site/Firewall/Get-RocketCyberFirewall.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Firewalls/Get-RocketCyberFirewall.html](https://celerium.github.io/Celerium.RocketCyber/site/Firewalls/Get-RocketCyberFirewall.html)
 

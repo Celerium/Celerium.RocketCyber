@@ -353,5 +353,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Agent/Get-RocketCyberAgent.html](https://celerium.github.io/Celerium.RocketCyber/site/Agent/Get-RocketCyberAgent.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Agents/Get-RocketCyberAgent.html](https://celerium.github.io/Celerium.RocketCyber/site/Agents/Get-RocketCyberAgent.html)
 

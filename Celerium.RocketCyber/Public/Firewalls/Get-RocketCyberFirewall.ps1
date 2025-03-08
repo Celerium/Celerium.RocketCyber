@@ -92,7 +92,7 @@ function Get-RocketCyberFirewall {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Firewall/Get-RocketCyberFirewall.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Firewalls/Get-RocketCyberFirewall.html
 #>
 
     [CmdletBinding(DefaultParameterSetName = 'Index')]

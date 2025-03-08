@@ -43,7 +43,7 @@ function Get-RocketCyberApp {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/App/Get-RocketCyberApp.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Apps/Get-RocketCyberApp.html
 
 #>
 

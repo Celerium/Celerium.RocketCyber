@@ -333,5 +333,5 @@ The remediation parameter does not appear to work
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Incident/Get-RocketCyberIncident.html](https://celerium.github.io/Celerium.RocketCyber/site/Incident/Get-RocketCyberIncident.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Incidents/Get-RocketCyberIncident.html](https://celerium.github.io/Celerium.RocketCyber/site/Incidents/Get-RocketCyberIncident.html)
 

@@ -147,7 +147,7 @@ function Get-RocketCyberIncident {
         The remediation parameter does not appear to work
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Incident/Get-RocketCyberIncident.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Incidents/Get-RocketCyberIncident.html
 
 #>
 

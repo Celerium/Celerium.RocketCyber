@@ -695,12 +695,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>Online Version:</maml:linkText>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Agents/Get-RocketCyberAgent.html</maml:linkText>
         <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Agents/Get-RocketCyberAgent.html</maml:uri>
-      </maml:navigationLink>
-      <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Agent/Get-RocketCyberAgent.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Agent/Get-RocketCyberAgent.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -810,12 +806,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>Online Version:</maml:linkText>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Apps/Get-RocketCyberApp.html</maml:linkText>
         <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Apps/Get-RocketCyberApp.html</maml:uri>
-      </maml:navigationLink>
-      <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/App/Get-RocketCyberApp.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/App/Get-RocketCyberApp.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1235,12 +1227,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>Online Version:</maml:linkText>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Events/Get-RocketCyberEvent.html</maml:linkText>
         <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Events/Get-RocketCyberEvent.html</maml:uri>
-      </maml:navigationLink>
-      <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Event/Get-RocketCyberEvent.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Event/Get-RocketCyberEvent.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1562,12 +1550,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>Online Version:</maml:linkText>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Firewalls/Get-RocketCyberFirewall.html</maml:linkText>
         <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Firewalls/Get-RocketCyberFirewall.html</maml:uri>
-      </maml:navigationLink>
-      <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Firewall/Get-RocketCyberFirewall.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Firewall/Get-RocketCyberFirewall.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1969,12 +1953,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>Online Version:</maml:linkText>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Incidents/Get-RocketCyberIncident.html</maml:linkText>
         <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Incidents/Get-RocketCyberIncident.html</maml:uri>
-      </maml:navigationLink>
-      <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Incident/Get-RocketCyberIncident.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Incident/Get-RocketCyberIncident.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

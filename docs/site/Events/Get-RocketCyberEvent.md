@@ -267,5 +267,5 @@ As of 2023-03
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Event/Get-RocketCyberEvent.html](https://celerium.github.io/Celerium.RocketCyber/site/Event/Get-RocketCyberEvent.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Events/Get-RocketCyberEvent.html](https://celerium.github.io/Celerium.RocketCyber/site/Events/Get-RocketCyberEvent.html)
 

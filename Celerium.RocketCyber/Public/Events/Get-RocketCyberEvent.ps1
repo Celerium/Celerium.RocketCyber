@@ -104,7 +104,7 @@ function Get-RocketCyberEvent {
             however I have not found any documentation around this
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Event/Get-RocketCyberEvent.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Events/Get-RocketCyberEvent.html
 
 #>
 

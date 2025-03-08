@@ -1225,7 +1225,7 @@ function Get-RocketCyberAccount {
 
 }
 #EndRegion '.\Public\Account\Get-RocketCyberAccount.ps1' 88
-#Region '.\Public\Agent\Get-RocketCyberAgent.ps1' -1
+#Region '.\Public\Agents\Get-RocketCyberAgent.ps1' -1
 
 function Get-RocketCyberAgent {
 <#
@@ -1368,7 +1368,7 @@ function Get-RocketCyberAgent {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Agent/Get-RocketCyberAgent.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Agents/Get-RocketCyberAgent.html
 #>
 
     [CmdletBinding(DefaultParameterSetName = 'Index')]
@@ -1504,8 +1504,8 @@ function Get-RocketCyberAgent {
     end{}
 
 }
-#EndRegion '.\Public\Agent\Get-RocketCyberAgent.ps1' 278
-#Region '.\Public\App\Get-RocketCyberApp.ps1' -1
+#EndRegion '.\Public\Agents\Get-RocketCyberAgent.ps1' 278
+#Region '.\Public\Apps\Get-RocketCyberApp.ps1' -1
 
 function Get-RocketCyberApp {
 <#
@@ -1552,7 +1552,7 @@ function Get-RocketCyberApp {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/App/Get-RocketCyberApp.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Apps/Get-RocketCyberApp.html
 
 #>
 
@@ -1601,7 +1601,7 @@ function Get-RocketCyberApp {
     end{}
 
 }
-#EndRegion '.\Public\App\Get-RocketCyberApp.ps1' 95
+#EndRegion '.\Public\Apps\Get-RocketCyberApp.ps1' 95
 #Region '.\Public\Defender\Get-RocketCyberDefender.ps1' -1
 
 function Get-RocketCyberDefender {
@@ -1681,7 +1681,7 @@ function Get-RocketCyberDefender {
 
 }
 #EndRegion '.\Public\Defender\Get-RocketCyberDefender.ps1' 77
-#Region '.\Public\Event\Get-RocketCyberEvent.ps1' -1
+#Region '.\Public\Events\Get-RocketCyberEvent.ps1' -1
 
 function Get-RocketCyberEvent {
 <#
@@ -1789,7 +1789,7 @@ function Get-RocketCyberEvent {
             however I have not found any documentation around this
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Event/Get-RocketCyberEvent.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Events/Get-RocketCyberEvent.html
 
 #>
 
@@ -1881,8 +1881,8 @@ function Get-RocketCyberEvent {
     end{}
 
 }
-#EndRegion '.\Public\Event\Get-RocketCyberEvent.ps1' 199
-#Region '.\Public\Firewall\Get-RocketCyberFirewall.ps1' -1
+#EndRegion '.\Public\Events\Get-RocketCyberEvent.ps1' 199
+#Region '.\Public\Firewalls\Get-RocketCyberFirewall.ps1' -1
 
 function Get-RocketCyberFirewall {
 <#
@@ -1978,7 +1978,7 @@ function Get-RocketCyberFirewall {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Firewall/Get-RocketCyberFirewall.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Firewalls/Get-RocketCyberFirewall.html
 #>
 
     [CmdletBinding(DefaultParameterSetName = 'Index')]
@@ -2063,8 +2063,8 @@ function Get-RocketCyberFirewall {
     end{}
 
 }
-#EndRegion '.\Public\Firewall\Get-RocketCyberFirewall.ps1' 180
-#Region '.\Public\Incident\Get-RocketCyberIncident.ps1' -1
+#EndRegion '.\Public\Firewalls\Get-RocketCyberFirewall.ps1' 180
+#Region '.\Public\Incidents\Get-RocketCyberIncident.ps1' -1
 
 function Get-RocketCyberIncident {
 <#
@@ -2215,7 +2215,7 @@ function Get-RocketCyberIncident {
         The remediation parameter does not appear to work
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Incident/Get-RocketCyberIncident.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Incidents/Get-RocketCyberIncident.html
 
 #>
 
@@ -2312,7 +2312,7 @@ function Get-RocketCyberIncident {
     end{}
 
 }
-#EndRegion '.\Public\Incident\Get-RocketCyberIncident.ps1' 247
+#EndRegion '.\Public\Incidents\Get-RocketCyberIncident.ps1' 247
 #Region '.\Public\Office\Get-RocketCyberOffice.ps1' -1
 
 function Get-RocketCyberOffice {

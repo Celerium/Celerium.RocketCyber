@@ -101,5 +101,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/App/Get-RocketCyberApp.html](https://celerium.github.io/Celerium.RocketCyber/site/App/Get-RocketCyberApp.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Apps/Get-RocketCyberApp.html](https://celerium.github.io/Celerium.RocketCyber/site/Apps/Get-RocketCyberApp.html)
 

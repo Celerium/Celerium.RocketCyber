@@ -2,13 +2,13 @@
 external help file: Celerium.RocketCyber-help.xml
 grand_parent: Internal
 Module Name: Celerium.RocketCyber
-online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html
+online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html
 parent: POST
 schema: 2.0.0
-title: Add-RocketCyberAPIKey
+title: Add-RocketCyberApiKey
 ---
 
-# Add-RocketCyberAPIKey
+# Add-RocketCyberApiKey
 
 ## SYNOPSIS
 Sets your API key used to authenticate all API calls
@@ -17,16 +17,16 @@ Sets your API key used to authenticate all API calls
 
 ### AsPlainText
 ```powershell
-Add-RocketCyberAPIKey [-ApiKey <String>] [<CommonParameters>]
+Add-RocketCyberApiKey [-ApiKey <String>] [<CommonParameters>]
 ```
 
 ### SecureString
 ```powershell
-Add-RocketCyberAPIKey [-ApiKeySecureString <SecureString>] [<CommonParameters>]
+Add-RocketCyberApiKey [-ApiKeySecureString <SecureString>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Add-RocketCyberAPIKey cmdlet sets your API key which is used to
+The Add-RocketCyberApiKey cmdlet sets your API key which is used to
 authenticate all API calls made to RocketCyber.
 Once the API key is
 defined, it is encrypted using SecureString
@@ -38,24 +38,24 @@ at Provider Settings \> RocketCyber API
 
 ### EXAMPLE 1
 ```powershell
-Add-RocketCyberAPIKey
+Add-RocketCyberApiKey
 ```
 
 Prompts to enter in the API key
 
 ### EXAMPLE 2
 ```powershell
-Add-RocketCyberAPIKey -ApiKey 'your_ApiKey'
+Add-RocketCyberApiKey -ApiKey 'your_ApiKey'
 ```
 
 The RocketCyber API will use the string entered into the \[ -ApiKey \] parameter
 
 ### EXAMPLE 3
 ```
-'12345' | Add-RocketCyberAPIKey
+'12345' | Add-RocketCyberApiKey
 ```
 
-The Add-RocketCyberAPIKey function will use the string passed into it as its API key
+The Add-RocketCyberApiKey function will use the string passed into it as its API key
 
 ## PARAMETERS
 
@@ -104,5 +104,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html)
 

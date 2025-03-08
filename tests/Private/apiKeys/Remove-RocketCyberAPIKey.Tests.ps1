@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .DESCRIPTION
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .PARAMETER ModuleName
         The name of the local module to import
@@ -18,12 +18,12 @@
             'Built', 'NotBuilt'
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Remove-RocketCyberAPIKey.Tests.ps1
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Remove-RocketCyberApiKey.Tests.ps1
 
         Runs a pester test and outputs simple results
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Remove-RocketCyberAPIKey.Tests.ps1 -Output Detailed
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Remove-RocketCyberApiKey.Tests.ps1 -Output Detailed
 
         Runs a pester test and outputs detailed results
 
@@ -101,7 +101,7 @@ param (
 
     AfterAll{
 
-        Remove-RocketCyberAPIKey -WarningAction SilentlyContinue
+        Remove-RocketCyberApiKey -WarningAction SilentlyContinue
 
         if (Get-Module -Name $ModuleName) {
             Remove-Module -Name $ModuleName -Force
@@ -121,21 +121,21 @@ param (
 
 #EndRegion  [ Prerequisites ]
 
-Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('APIKeys') {
+Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('ApiKeys') {
 
     Context "[ $CommandName ] testing function" {
 
         It "Running [ $CommandName ] should remove all apiKey variables" {
-            Add-RocketCyberAPIKey -ApiKey '12345'
-            Remove-RocketCyberAPIKey
+            Add-RocketCyberApiKey -ApiKey '12345'
+            Remove-RocketCyberApiKey
             $RocketCyberModuleApiKey | Should -BeNullOrEmpty
         }
 
         It "If the [ RocketCyberApiKey ] is already empty a warning should be thrown" {
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
             Remove-Variable -Name "RocketCyberModuleApiKey" -Scope Global -Force
 
-            Remove-RocketCyberAPIKey -WarningAction SilentlyContinue -WarningVariable apiKeyWarning
+            Remove-RocketCyberApiKey -WarningAction SilentlyContinue -WarningVariable apiKeyWarning
             $apiKeyWarning | Should -Be "The RocketCyber API key variable is not set. Nothing to remove"
         }
 

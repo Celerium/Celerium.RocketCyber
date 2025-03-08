@@ -63,7 +63,7 @@ function Export-RocketCyberModuleSettings {
         $RocketCyberConfig = Join-Path -Path $RocketCyberConfigPath -ChildPath $RocketCyberConfigFile
 
         # Confirm variables exist and are not null before exporting
-        if ($RocketCyberModuleBaseURI -and $RocketCyberModuleApiKey) {
+        if ($RocketCyberModuleBaseUri -and $RocketCyberModuleApiKey) {
             $SecureString = $RocketCyberModuleApiKey | ConvertFrom-SecureString
 
             if ($IsWindows -or $PSEdition -eq 'Desktop') {
@@ -74,7 +74,7 @@ function Export-RocketCyberModuleSettings {
             }
 @"
     @{
-        RocketCyberModuleBaseURI            = '$RocketCyberModuleBaseURI'
+        RocketCyberModuleBaseUri            = '$RocketCyberModuleBaseUri'
         RocketCyberModuleApiKey             = '$SecureString'
     }
 "@ | Out-File -FilePath $RocketCyberConfig -Force

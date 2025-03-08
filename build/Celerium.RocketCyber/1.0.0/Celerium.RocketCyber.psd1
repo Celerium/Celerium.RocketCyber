@@ -76,7 +76,7 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export
-    FunctionsToExport = @('ConvertTo-RocketCyberQueryString','Invoke-RocketCyberRequest','Add-RocketCyberAPIKey','Get-RocketCyberAPIKey','Remove-RocketCyberAPIKey','Test-RocketCyberAPIKey','Add-RocketCyberBaseURI','Get-RocketCyberBaseURI','Remove-RocketCyberBaseURI','Export-RocketCyberModuleSettings','Get-RocketCyberModuleSettings','Import-RocketCyberModuleSettings','Initialize-RocketCyberModuleSettings','Remove-RocketCyberModuleSettings','Get-RocketCyberAccount','Get-RocketCyberAgent','Get-RocketCyberApp','Get-RocketCyberDefender','Get-RocketCyberEvent','Get-RocketCyberFirewall','Get-RocketCyberIncident','Get-RocketCyberOffice')
+    FunctionsToExport = @('ConvertTo-RocketCyberQueryString','Invoke-RocketCyberRequest','Add-RocketCyberApiKey','Get-RocketCyberApiKey','Remove-RocketCyberApiKey','Test-RocketCyberApiKey','Add-RocketCyberBaseUri','Get-RocketCyberBaseUri','Remove-RocketCyberBaseUri','Export-RocketCyberModuleSettings','Get-RocketCyberModuleSettings','Import-RocketCyberModuleSettings','Initialize-RocketCyberModuleSettings','Remove-RocketCyberModuleSettings','Get-RocketCyberAccount','Get-RocketCyberAgent','Get-RocketCyberApp','Get-RocketCyberDefender','Get-RocketCyberEvent','Get-RocketCyberFirewall','Get-RocketCyberIncident','Get-RocketCyberOffice')
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export
     CmdletsToExport = @()
@@ -85,7 +85,7 @@
     VariablesToExport = '*'
 
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export
-    AliasesToExport = @('ConvertTo-RCQueryString','Invoke-RCRequest','Add-RCAPIKey','Set-RCAPIKey','Set-RocketCyberAPIKey','Get-RCAPIKey','Remove-RCAPIKey','Test-RCAPIKey','Add-RCBaseUri','Set-RCBaseUri','Set-RocketCyberBaseUri','Get-RCBaseUri','Remove-RCBaseUri','Export-RCModuleSettings','Import-RCModuleSettings','Remove-RCModuleSettings','Get-RCAccount','Get-RCAgent','Get-RCApp','Get-RCDefender','Get-RCEvent','Get-RCFirewall','Get-RCIncident','Get-RCOffice')
+    AliasesToExport = @('ConvertTo-RCQueryString','Invoke-RCRequest','Add-RCApiKey','Set-RCApiKey','Set-RocketCyberApiKey','Get-RCApiKey','Remove-RCApiKey','Test-RCApiKey','Add-RCBaseUri','Set-RCBaseUri','Set-RocketCyberBaseUri','Get-RCBaseUri','Remove-RCBaseUri','Export-RCModuleSettings','Import-RCModuleSettings','Remove-RCModuleSettings','Get-RCAccount','Get-RCAgent','Get-RCApp','Get-RCDefender','Get-RCEvent','Get-RCFirewall','Get-RCIncident','Get-RCOffice')
 
     # DSC resources to export from this module
     # DscResourcesToExport = @()

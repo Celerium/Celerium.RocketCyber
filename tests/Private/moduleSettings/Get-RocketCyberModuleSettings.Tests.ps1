@@ -132,7 +132,7 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Mo
 
         It "Configuration directory should be hidden" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -ErrorVariable ModuleSettingsError -WarningAction SilentlyContinue
 
@@ -141,13 +141,13 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Mo
 
         It "Configuration file should contain required values" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -ErrorVariable ModuleSettingsError -WarningAction SilentlyContinue
 
             $ConfigFile = Get-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath
                 $ConfigFile.Count                       | Should -BeGreaterOrEqual 2
-                $ConfigFile.RocketCyberModuleBaseURI    | Should -Not -BeNullOrEmpty
+                $ConfigFile.RocketCyberModuleBaseUri    | Should -Not -BeNullOrEmpty
                 $ConfigFile.RocketCyberModuleApiKey     | Should -Not -BeNullOrEmpty
         }
 

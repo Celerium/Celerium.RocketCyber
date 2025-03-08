@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .DESCRIPTION
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .PARAMETER ModuleName
         The name of the local module to import
@@ -18,12 +18,12 @@
             'Built', 'NotBuilt'
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Remove-RocketCyberAPIKey.Tests.ps1
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Remove-RocketCyberApiKey.Tests.ps1
 
         Runs a pester test and outputs simple results
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Remove-RocketCyberAPIKey.Tests.ps1 -Output Detailed
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Remove-RocketCyberApiKey.Tests.ps1 -Output Detailed
 
         Runs a pester test and outputs detailed results
 
@@ -106,7 +106,7 @@ param (
     AfterAll{
 
         Remove-RocketCyberBaseUri -WarningAction SilentlyContinue
-        Remove-RocketCyberAPIKey -WarningAction SilentlyContinue
+        Remove-RocketCyberApiKey -WarningAction SilentlyContinue
 
         Foreach ($script in $import_Scripts) {
             if (Get-Module -Name $script.BaseName) {
@@ -128,15 +128,15 @@ param (
 
 #EndRegion  [ Prerequisites ]
 
-Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('APIKeys') {
+Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('ApiKeys') {
 
     Context "[ $CommandName ] testing function" {
 
-        It "[ Test-RocketCyberAPIKey ] with a bad API key should fail to authenticate" {
+        It "[ Test-RocketCyberApiKey ] with a bad API key should fail to authenticate" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
-            $Value = Test-RocketCyberAPIKey 3>$null
+            $Value = Test-RocketCyberApiKey 3>$null
             $Value.Message | Should -BeLike '*Unauthorized*'
         }
 

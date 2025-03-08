@@ -12,7 +12,7 @@ Locale: en-US
 This PowerShell module acts as a wrapper for the RocketCyber API.
 
 ## Celerium.RocketCyber Cmdlets
-### [Add-RocketCyberAPIKey](site/Internal/Add-RocketCyberAPIKey.md)
+### [Add-RocketCyberApiKey](site/Internal/Add-RocketCyberApiKey.md)
 Sets your API key used to authenticate all API calls
 
 ### [Add-RocketCyberBaseUri](site/Internal/Add-RocketCyberBaseUri.md)
@@ -30,7 +30,7 @@ Gets account information for a given ID
 ### [Get-RocketCyberAgent](site/Agents/Get-RocketCyberAgent.md)
 Gets RocketCyber agents from an account
 
-### [Get-RocketCyberAPIKey](site/Internal/Get-RocketCyberAPIKey.md)
+### [Get-RocketCyberApiKey](site/Internal/Get-RocketCyberApiKey.md)
 Gets the RocketCyber API key
 
 ### [Get-RocketCyberApp](site/Apps/Get-RocketCyberApp.md)
@@ -63,7 +63,7 @@ Imports the RocketCyber BaseUri, API, & JSON configuration information to the cu
 ### [Invoke-RocketCyberRequest](site/Internal/Invoke-RocketCyberRequest.md)
 Makes an API request
 
-### [Remove-RocketCyberAPIKey](site/Internal/Remove-RocketCyberAPIKey.md)
+### [Remove-RocketCyberApiKey](site/Internal/Remove-RocketCyberApiKey.md)
 Removes the RocketCyber API key
 
 ### [Remove-RocketCyberBaseUri](site/Internal/Remove-RocketCyberBaseUri.md)
@@ -72,7 +72,7 @@ Removes the RocketCyber base URI global variable
 ### [Remove-RocketCyberModuleSettings](site/Internal/Remove-RocketCyberModuleSettings.md)
 Removes the stored RocketCyber configuration folder
 
-### [Test-RocketCyberAPIKey](site/Internal/Test-RocketCyberAPIKey.md)
+### [Test-RocketCyberApiKey](site/Internal/Test-RocketCyberApiKey.md)
 Test the RocketCyber API key
 
 

@@ -26,10 +26,10 @@ function Remove-RocketCyberBaseUri {
 
     process {
 
-        switch ([bool]$RocketCyberModuleBaseURI) {
+        switch ([bool]$RocketCyberModuleBaseUri) {
             $true   {
-                if ($PSCmdlet.ShouldProcess('RocketCyberModuleBaseURI')) {
-                    Remove-Variable -Name "RocketCyberModuleBaseURI" -Scope Global -Force
+                if ($PSCmdlet.ShouldProcess('RocketCyberModuleBaseUri')) {
+                    Remove-Variable -Name "RocketCyberModuleBaseUri" -Scope Global -Force
                 }
             }
             $false  { Write-Warning "The RocketCyber base URI variable is not set. Nothing to remove" }

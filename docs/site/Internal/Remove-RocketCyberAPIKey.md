@@ -2,13 +2,13 @@
 external help file: Celerium.RocketCyber-help.xml
 grand_parent: Internal
 Module Name: Celerium.RocketCyber
-online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html
+online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html
 parent: DELETE
 schema: 2.0.0
-title: Remove-RocketCyberAPIKey
+title: Remove-RocketCyberApiKey
 ---
 
-# Remove-RocketCyberAPIKey
+# Remove-RocketCyberApiKey
 
 ## SYNOPSIS
 Removes the RocketCyber API key
@@ -16,17 +16,17 @@ Removes the RocketCyber API key
 ## SYNTAX
 
 ```powershell
-Remove-RocketCyberAPIKey [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-RocketCyberApiKey [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Remove-RocketCyberAPIKey cmdlet removes the RocketCyber API key
+The Remove-RocketCyberApiKey cmdlet removes the RocketCyber API key
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Remove-RocketCyberAPIKey
+Remove-RocketCyberApiKey
 ```
 
 Removes the RocketCyber API key
@@ -76,5 +76,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html)
 

@@ -7,7 +7,7 @@
 
         This is a proof of concept script. It is not intended to be used in production.
 
-    .PARAMETER APIKey
+    .PARAMETER ApiKey
         Enter in the RocketCyber API key for authentication
 
     .PARAMETER APIEndPoint
@@ -29,19 +29,19 @@
         Switch statement to open the report folder after the script runs.
 
     .EXAMPLE
-        Get-RocketCyberAgentsReport -APIKey 12345 -id 12345
+        Get-RocketCyberAgentsReport -ApiKey 12345 -id 12345
 
         Gets all agent from the RocketCyber API and sends the data to a CSV file.
         By default any agent that has not logged in for more than 90 days will be classified as inactive.
 
     .EXAMPLE
-        Get-RocketCyberAgentsReport -APIKey 12345 -id 12345 -Days -180 -Report HTML
+        Get-RocketCyberAgentsReport -ApiKey 12345 -id 12345 -Days -180 -Report HTML
 
         Gets all agent from the RocketCyber API and sends the data to a HTML file.
         Any agent that has not logged in for more than 180 days will be classified as inactive.
 
     .EXAMPLE
-        Get-RocketCyberAgentsReport -APIKey 12345 -id 12345 -Days -30 -Report All
+        Get-RocketCyberAgentsReport -ApiKey 12345 -id 12345 -Days -30 -Report All
 
         Gets all agent from the RocketCyber API and sends the data to both a CSV & HTML file.
         Any agent that has not logged in for more than 30 days will be classified as inactive.
@@ -120,7 +120,7 @@ Write-Output "Start - $(Get-Date -Format yyyy-MM-dd-HH:mm)"
 
     #Settings RocketCyber login information
     Add-RocketCyberBaseUri -BaseUri $APIEndpoint
-    Add-RocketCyberAPIKey $APIKey -ErrorAction Stop
+    Add-RocketCyberApiKey $ApiKey -ErrorAction Stop
 
 
     #Define & create logging location

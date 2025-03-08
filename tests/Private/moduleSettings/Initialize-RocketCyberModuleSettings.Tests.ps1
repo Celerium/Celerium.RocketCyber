@@ -137,7 +137,7 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Mo
 
             Import-RocketCyberModuleSettings -RocketCyberConfigPath $invalidPath -RocketCyberConfigFile 'invalid.psd1'
 
-            (Get-Variable -Name RocketCyberModuleBaseURI).Value | Should -Be $(Get-RocketCyberBaseUri)
+            (Get-Variable -Name RocketCyberModuleBaseUri).Value | Should -Be $(Get-RocketCyberBaseUri)
         }
 
         It "When imported WITH a saved configuration baseline variables should exist" {
@@ -145,12 +145,12 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Mo
             Import-Module -Name $ModulePsd1 -Force
 
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -WarningAction SilentlyContinue
 
             Import-Module -Name $ModulePsd1 -Force
 
-            (Get-Variable -Name RocketCyberModuleBaseURI).Value | Should -Not -BeNullOrEmpty
+            (Get-Variable -Name RocketCyberModuleBaseUri).Value | Should -Not -BeNullOrEmpty
             (Get-Variable -Name RocketCyberModuleApiKey).Value | Should -Not -BeNullOrEmpty
         }
 

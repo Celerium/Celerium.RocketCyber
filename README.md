@@ -106,7 +106,7 @@ After installing this module, you will need to configure both the *base URI* & *
       - `Add-RocketCyberBaseUri -BaseUri http://myapi.gateway.celerium.org`
 <br>
 
-2. Run `Add-RocketCyberAPIKey -ApiKey '12345'`
+2. Run `Add-RocketCyberApiKey -ApiKey '12345'`
    - It will prompt you to enter your API key if you do not specify it.
    - RocketCyber API keys are generated via the RocketCyber portal under *Provider settings > RocketCyber API*
 <br>

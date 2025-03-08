@@ -134,23 +134,23 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Mo
         It "No configuration should populate baseline variables" {
             Import-RocketCyberModuleSettings -RocketCyberConfigPath $invalidPath -RocketCyberConfigFile 'invalid.psd1'
 
-            (Get-Variable -Name RocketCyberModuleBaseURI).Value | Should -Be $(Get-RocketCyberBaseUri)
+            (Get-Variable -Name RocketCyberModuleBaseUri).Value | Should -Be $(Get-RocketCyberBaseUri)
         }
 
         It "Saved configuration session should contain required variables" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -WarningAction SilentlyContinue
             Import-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath
 
-            (Get-Variable -Name RocketCyberModuleBaseURI).Value         | Should -Not -BeNullOrEmpty
+            (Get-Variable -Name RocketCyberModuleBaseUri).Value         | Should -Not -BeNullOrEmpty
             (Get-Variable -Name RocketCyberModuleApiKey).Value    | Should -Not -BeNullOrEmpty
         }
 
         It "Saved configuration session should NOT contain temp variables" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -WarningAction SilentlyContinue
             Import-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath

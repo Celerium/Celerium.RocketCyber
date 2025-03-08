@@ -33,7 +33,7 @@
         'Built', 'NotBuilt'
 
 .EXAMPLE
-    Invoke-Pester -Path .\Tests\Private\APIKeys\Get-RocketCyberAPIKey.Tests.ps1 -Output Detailed
+    Invoke-Pester -Path .\Tests\Private\ApiKeys\Get-RocketCyberApiKey.Tests.ps1 -Output Detailed
 
     Runs a pester test and outputs detailed results
 

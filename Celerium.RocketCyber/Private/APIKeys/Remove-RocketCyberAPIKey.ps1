@@ -1,13 +1,13 @@
-function Remove-RocketCyberAPIKey {
+function Remove-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Removes the RocketCyber API key
 
     .DESCRIPTION
-        The Remove-RocketCyberAPIKey cmdlet removes the RocketCyber API key
+        The Remove-RocketCyberApiKey cmdlet removes the RocketCyber API key
 
     .EXAMPLE
-        Remove-RocketCyberAPIKey
+        Remove-RocketCyberApiKey
 
         Removes the RocketCyber API key
 
@@ -15,11 +15,11 @@ function Remove-RocketCyberAPIKey {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html
 #>
 
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'None')]
-    [alias("Remove-RCAPIKey")]
+    [alias("Remove-RCApiKey")]
     Param ()
 
     begin {}

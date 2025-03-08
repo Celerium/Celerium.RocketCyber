@@ -26,7 +26,7 @@ function Invoke-RocketCyberRequest {
         This allows for the full uri query to occur
 
         The full resource path is made with the following data
-        $RocketCyberModuleBaseURI + $ResourceUri + ConvertTo-RocketCyberQueryString
+        $RocketCyberModuleBaseUri + $ResourceUri + ConvertTo-RocketCyberQueryString
 
     .PARAMETER Data
         Place holder parameter to use when other methods are supported
@@ -101,7 +101,7 @@ function Invoke-RocketCyberRequest {
         Set-Variable -Name $QueryParameterName -Value $QueryString -Scope Global -Force
 
         try {
-            $ApiToken = Get-RocketCyberAPIKey -AsPlainText
+            $ApiToken = Get-RocketCyberApiKey -AsPlainText
 
             $Parameters = [ordered] @{
                 "Method"    = $Method
@@ -112,7 +112,7 @@ function Invoke-RocketCyberRequest {
 
             if ($AllResults) {
 
-                Write-Verbose "Gathering all items from [  $( $RocketCyberModuleBaseURI + $ResourceUri ) ] "
+                Write-Verbose "Gathering all items from [  $( $RocketCyberModuleBaseUri + $ResourceUri ) ] "
 
                 $PageNumber = 1
                 $AllResponseData = [System.Collections.Generic.List[object]]::new()

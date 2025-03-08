@@ -86,7 +86,7 @@ a functions parameters with the ResourceUri parameter
 This allows for the full uri query to occur
 
 The full resource path is made with the following data
-$RocketCyberModuleBaseURI + $ResourceUri + ConvertTo-RocketCyberQueryString
+$RocketCyberModuleBaseUri + $ResourceUri + ConvertTo-RocketCyberQueryString
 
 ```yaml
 Type: Hashtable

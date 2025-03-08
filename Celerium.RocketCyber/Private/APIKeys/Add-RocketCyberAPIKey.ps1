@@ -1,10 +1,10 @@
-function Add-RocketCyberAPIKey {
+function Add-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Sets your API key used to authenticate all API calls
 
     .DESCRIPTION
-        The Add-RocketCyberAPIKey cmdlet sets your API key which is used to
+        The Add-RocketCyberApiKey cmdlet sets your API key which is used to
         authenticate all API calls made to RocketCyber. Once the API key is
         defined, it is encrypted using SecureString
 
@@ -21,29 +21,29 @@ function Add-RocketCyberAPIKey {
         Input a SecureString object containing the API key
 
     .EXAMPLE
-        Add-RocketCyberAPIKey
+        Add-RocketCyberApiKey
 
         Prompts to enter in the API key
 
     .EXAMPLE
-        Add-RocketCyberAPIKey -ApiKey 'your_ApiKey'
+        Add-RocketCyberApiKey -ApiKey 'your_ApiKey'
 
         The RocketCyber API will use the string entered into the [ -ApiKey ] parameter
 
     .EXAMPLE
-        '12345' | Add-RocketCyberAPIKey
+        '12345' | Add-RocketCyberApiKey
 
-        The Add-RocketCyberAPIKey function will use the string passed into it as its API key
+        The Add-RocketCyberApiKey function will use the string passed into it as its API key
 
     .NOTES
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html
 #>
 
     [CmdletBinding()]
-    [alias( "Add-RCAPIKey", "Set-RCAPIKey", "Set-RocketCyberAPIKey" )]
+    [alias( "Add-RCApiKey", "Set-RCApiKey", "Set-RocketCyberApiKey" )]
     Param (
         [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'AsPlainText')]
         [ValidateNotNullOrEmpty()]

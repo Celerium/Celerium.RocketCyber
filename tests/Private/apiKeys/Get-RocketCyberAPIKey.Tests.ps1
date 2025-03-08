@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .DESCRIPTION
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .PARAMETER ModuleName
         The name of the local module to import
@@ -18,12 +18,12 @@
             'Built', 'NotBuilt'
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Get-RocketCyberAPIKey.Tests.ps1
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Get-RocketCyberApiKey.Tests.ps1
 
         Runs a pester test and outputs simple results
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Get-RocketCyberAPIKey.Tests.ps1 -Output Detailed
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Get-RocketCyberApiKey.Tests.ps1 -Output Detailed
 
         Runs a pester test and outputs detailed results
 
@@ -101,7 +101,7 @@ param (
 
     AfterAll{
 
-        Remove-RocketCyberAPIKey -WarningAction SilentlyContinue
+        Remove-RocketCyberApiKey -WarningAction SilentlyContinue
 
         if (Get-Module -Name $ModuleName) {
             Remove-Module -Name $ModuleName -Force
@@ -120,33 +120,33 @@ param (
 
 #EndRegion  [ Prerequisites ]
 
-Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('APIKeys') {
+Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('ApiKeys') {
 
     Context "[ $CommandName ] testing function" {
 
         It "[ -ApiKey ] should accept input" {
-            Add-RocketCyberAPIKey -ApiKey '12345'
-            Get-RocketCyberAPIKey | Should -Not -BeNullOrEmpty
+            Add-RocketCyberApiKey -ApiKey '12345'
+            Get-RocketCyberApiKey | Should -Not -BeNullOrEmpty
         }
 
         It "Pipeline  - [ -ApiKey ] should return a secure string" {
-            "Celerium.RocketCyberKey" | Add-RocketCyberAPIKey
-            Get-RocketCyberAPIKey | Should -BeOfType SecureString
+            "Celerium.RocketCyberKey" | Add-RocketCyberApiKey
+            Get-RocketCyberApiKey | Should -BeOfType SecureString
         }
 
         It "Parameter - [ -ApiKey ] should return a secure string" {
-            Add-RocketCyberAPIKey -ApiKey '12345'
-            Get-RocketCyberAPIKey | Should -BeOfType SecureString
+            Add-RocketCyberApiKey -ApiKey '12345'
+            Get-RocketCyberApiKey | Should -BeOfType SecureString
         }
 
         It "Using [ -AsPlainText ] should return [ -ApiKey ] as a string" {
-            Add-RocketCyberAPIKey -ApiKey '12345'
-            Get-RocketCyberAPIKey -AsPlainText | Should -BeOfType String
+            Add-RocketCyberApiKey -ApiKey '12345'
+            Get-RocketCyberApiKey -AsPlainText | Should -BeOfType String
         }
 
         It "If [ -ApiKey ] is empty it should throw a warning" {
-            Remove-RocketCyberAPIKey
-            Get-RocketCyberAPIKey -WarningAction SilentlyContinue -WarningVariable apiKeyWarning
+            Remove-RocketCyberApiKey
+            Get-RocketCyberApiKey -WarningAction SilentlyContinue -WarningVariable apiKeyWarning
             [bool]$apiKeyWarning | Should -BeTrue
         }
 

@@ -2,13 +2,13 @@
 external help file: Celerium.RocketCyber-help.xml
 grand_parent: Internal
 Module Name: Celerium.RocketCyber
-online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html
+online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html
 parent: GET
 schema: 2.0.0
-title: Get-RocketCyberAPIKey
+title: Get-RocketCyberApiKey
 ---
 
-# Get-RocketCyberAPIKey
+# Get-RocketCyberApiKey
 
 ## SYNOPSIS
 Gets the RocketCyber API key
@@ -16,25 +16,25 @@ Gets the RocketCyber API key
 ## SYNTAX
 
 ```powershell
-Get-RocketCyberAPIKey [-AsPlainText] [<CommonParameters>]
+Get-RocketCyberApiKey [-AsPlainText] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Get-RocketCyberAPIKey cmdlet gets the RocketCyber API key
+The Get-RocketCyberApiKey cmdlet gets the RocketCyber API key
 global variable and returns it as a SecureString
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```powershell
-Get-RocketCyberAPIKey
+Get-RocketCyberApiKey
 ```
 
 Gets the RocketCyber API key and returns it as a SecureString
 
 ### EXAMPLE 2
 ```powershell
-Get-RocketCyberAPIKey -AsPlainText
+Get-RocketCyberApiKey -AsPlainText
 ```
 
 Gets and decrypts the API key from the global variable and
@@ -69,5 +69,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html)
 

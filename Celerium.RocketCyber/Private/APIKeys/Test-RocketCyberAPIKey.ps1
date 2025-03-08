@@ -1,12 +1,12 @@
-function Test-RocketCyberAPIKey {
+function Test-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Test the RocketCyber API key
 
     .DESCRIPTION
-        The Test-RocketCyberAPIKey cmdlet tests the base URI & API
+        The Test-RocketCyberApiKey cmdlet tests the base URI & API
         key that was defined in the
-        Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+        Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
     .PARAMETER BaseUri
         Define the base URI for the RocketCyber API connection using RocketCyber's URI or a custom URI
@@ -20,7 +20,7 @@ function Test-RocketCyberAPIKey {
         Test-RocketCyberBaseUri -id 12345
 
         Tests the base URI & API key that was defined in the
-        Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+        Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
         The default full base uri test path is:
             https://api-us.rocketcyber.com/v3/account/id
@@ -29,7 +29,7 @@ function Test-RocketCyberAPIKey {
         Test-RocketCyberBaseUri -BaseUri http://myapi.gateway.celerium.org -id 12345
 
         Tests the base URI & API key that was defined in the
-        Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+        Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
         The full base uri test path in this example is:
             http://myapi.gateway.celerium.org/id
@@ -38,14 +38,14 @@ function Test-RocketCyberAPIKey {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html
 #>
 
     [CmdletBinding()]
-    [alias("Test-RCAPIKey")]
+    [alias("Test-RCApiKey")]
     Param (
         [Parameter(Mandatory = $false) ]
-        [string]$BaseUri = $RocketCyberModuleBaseURI
+        [string]$BaseUri = $RocketCyberModuleBaseUri
     )
 
     begin { $ResourceUri = "/account" }
@@ -56,7 +56,7 @@ function Test-RocketCyberAPIKey {
 
         try {
 
-            $ApiToken = Get-RocketCyberAPIKey -AsPlainText
+            $ApiToken = Get-RocketCyberApiKey -AsPlainText
 
             $RocketCyberHeaders = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
             $RocketCyberHeaders.Add("Content-Type", 'application/json')

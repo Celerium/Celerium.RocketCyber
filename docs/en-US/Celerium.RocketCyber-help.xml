@@ -1960,20 +1960,20 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Add-RocketCyberAPIKey</command:name>
+      <command:name>Add-RocketCyberApiKey</command:name>
       <command:verb>Add</command:verb>
-      <command:noun>RocketCyberAPIKey</command:noun>
+      <command:noun>RocketCyberApiKey</command:noun>
       <maml:description>
         <maml:para>Sets your API key used to authenticate all API calls</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Add-RocketCyberAPIKey cmdlet sets your API key which is used to authenticate all API calls made to RocketCyber. Once the API key is defined, it is encrypted using SecureString</maml:para>
+      <maml:para>The Add-RocketCyberApiKey cmdlet sets your API key which is used to authenticate all API calls made to RocketCyber. Once the API key is defined, it is encrypted using SecureString</maml:para>
       <maml:para>The RocketCyber API keys are generated via the RocketCyber web interface at Provider Settings &gt; RocketCyber API</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Add-RocketCyberAPIKey</maml:name>
+        <maml:name>Add-RocketCyberApiKey</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>ApiKey</maml:name>
           <maml:description>
@@ -1989,7 +1989,7 @@
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Add-RocketCyberAPIKey</maml:name>
+        <maml:name>Add-RocketCyberApiKey</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>ApiKeySecureString</maml:name>
           <maml:description>
@@ -2041,30 +2041,30 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Add-RocketCyberAPIKey</dev:code>
+        <dev:code>Add-RocketCyberApiKey</dev:code>
         <dev:remarks>
           <maml:para>Prompts to enter in the API key</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Add-RocketCyberAPIKey -ApiKey 'your_ApiKey'</dev:code>
+        <dev:code>Add-RocketCyberApiKey -ApiKey 'your_ApiKey'</dev:code>
         <dev:remarks>
           <maml:para>The RocketCyber API will use the string entered into the [ -ApiKey ] parameter</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
-        <dev:code>'12345' | Add-RocketCyberAPIKey</dev:code>
+        <dev:code>'12345' | Add-RocketCyberApiKey</dev:code>
         <dev:remarks>
-          <maml:para>The Add-RocketCyberAPIKey function will use the string passed into it as its API key</maml:para>
+          <maml:para>The Add-RocketCyberApiKey function will use the string passed into it as its API key</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html</maml:uri>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html</maml:linkText>
+        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2373,19 +2373,19 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-RocketCyberAPIKey</command:name>
+      <command:name>Get-RocketCyberApiKey</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>RocketCyberAPIKey</command:noun>
+      <command:noun>RocketCyberApiKey</command:noun>
       <maml:description>
         <maml:para>Gets the RocketCyber API key</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-RocketCyberAPIKey cmdlet gets the RocketCyber API key global variable and returns it as a SecureString</maml:para>
+      <maml:para>The Get-RocketCyberApiKey cmdlet gets the RocketCyber API key global variable and returns it as a SecureString</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-RocketCyberAPIKey</maml:name>
+        <maml:name>Get-RocketCyberApiKey</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsPlainText</maml:name>
           <maml:description>
@@ -2423,14 +2423,14 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Get-RocketCyberAPIKey</dev:code>
+        <dev:code>Get-RocketCyberApiKey</dev:code>
         <dev:remarks>
           <maml:para>Gets the RocketCyber API key and returns it as a SecureString</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Get-RocketCyberAPIKey -AsPlainText</dev:code>
+        <dev:code>Get-RocketCyberApiKey -AsPlainText</dev:code>
         <dev:remarks>
           <maml:para>Gets and decrypts the API key from the global variable and returns the API key in plain text</maml:para>
         </dev:remarks>
@@ -2438,8 +2438,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html</maml:uri>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html</maml:linkText>
+        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2765,7 +2765,7 @@
           <maml:description>
             <maml:para>Used with the internal function [ ConvertTo-RocketCyberQueryString ] to combine a functions parameters with the ResourceUri parameter</maml:para>
             <maml:para>This allows for the full uri query to occur</maml:para>
-            <maml:para>The full resource path is made with the following data $RocketCyberModuleBaseURI + $ResourceUri + ConvertTo-RocketCyberQueryString</maml:para>
+            <maml:para>The full resource path is made with the following data $RocketCyberModuleBaseUri + $ResourceUri + ConvertTo-RocketCyberQueryString</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
           <dev:type>
@@ -2819,7 +2819,7 @@
         <maml:description>
           <maml:para>Used with the internal function [ ConvertTo-RocketCyberQueryString ] to combine a functions parameters with the ResourceUri parameter</maml:para>
           <maml:para>This allows for the full uri query to occur</maml:para>
-          <maml:para>The full resource path is made with the following data $RocketCyberModuleBaseURI + $ResourceUri + ConvertTo-RocketCyberQueryString</maml:para>
+          <maml:para>The full resource path is made with the following data $RocketCyberModuleBaseUri + $ResourceUri + ConvertTo-RocketCyberQueryString</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Hashtable</command:parameterValue>
         <dev:type>
@@ -2868,19 +2868,19 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Remove-RocketCyberAPIKey</command:name>
+      <command:name>Remove-RocketCyberApiKey</command:name>
       <command:verb>Remove</command:verb>
-      <command:noun>RocketCyberAPIKey</command:noun>
+      <command:noun>RocketCyberApiKey</command:noun>
       <maml:description>
         <maml:para>Removes the RocketCyber API key</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Remove-RocketCyberAPIKey cmdlet removes the RocketCyber API key</maml:para>
+      <maml:para>The Remove-RocketCyberApiKey cmdlet removes the RocketCyber API key</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Remove-RocketCyberAPIKey</maml:name>
+        <maml:name>Remove-RocketCyberApiKey</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
           <maml:description>
@@ -2941,7 +2941,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Remove-RocketCyberAPIKey</dev:code>
+        <dev:code>Remove-RocketCyberApiKey</dev:code>
         <dev:remarks>
           <maml:para>Removes the RocketCyber API key</maml:para>
         </dev:remarks>
@@ -2949,8 +2949,8 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html</maml:uri>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html</maml:linkText>
+        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -3193,19 +3193,19 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Test-RocketCyberAPIKey</command:name>
+      <command:name>Test-RocketCyberApiKey</command:name>
       <command:verb>Test</command:verb>
-      <command:noun>RocketCyberAPIKey</command:noun>
+      <command:noun>RocketCyberApiKey</command:noun>
       <maml:description>
         <maml:para>Test the RocketCyber API key</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Test-RocketCyberAPIKey cmdlet tests the base URI &amp; API key that was defined in the Add-RocketCyberBaseUri &amp; Add-RocketCyberAPIKey cmdlets</maml:para>
+      <maml:para>The Test-RocketCyberApiKey cmdlet tests the base URI &amp; API key that was defined in the Add-RocketCyberBaseUri &amp; Add-RocketCyberApiKey cmdlets</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Test-RocketCyberAPIKey</maml:name>
+        <maml:name>Test-RocketCyberApiKey</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>BaseUri</maml:name>
           <maml:description>
@@ -3217,7 +3217,7 @@
             <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>$RocketCyberModuleBaseURI</dev:defaultValue>
+          <dev:defaultValue>$RocketCyberModuleBaseUri</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -3233,7 +3233,7 @@
           <maml:name>String</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>$RocketCyberModuleBaseURI</dev:defaultValue>
+        <dev:defaultValue>$RocketCyberModuleBaseUri</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes />
@@ -3248,7 +3248,7 @@
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
         <dev:code>Test-RocketCyberBaseUri -id 12345</dev:code>
         <dev:remarks>
-          <maml:para>Tests the base URI &amp; API key that was defined in the Add-RocketCyberBaseUri &amp; Add-RocketCyberAPIKey cmdlets</maml:para>
+          <maml:para>Tests the base URI &amp; API key that was defined in the Add-RocketCyberBaseUri &amp; Add-RocketCyberApiKey cmdlets</maml:para>
           <maml:para>The default full base uri test path is:     https://api-us.rocketcyber.com/v3/account/id</maml:para>
         </dev:remarks>
       </command:example>
@@ -3256,15 +3256,15 @@
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
         <dev:code>Test-RocketCyberBaseUri -BaseUri http://myapi.gateway.celerium.org -id 12345</dev:code>
         <dev:remarks>
-          <maml:para>Tests the base URI &amp; API key that was defined in the Add-RocketCyberBaseUri &amp; Add-RocketCyberAPIKey cmdlets</maml:para>
+          <maml:para>Tests the base URI &amp; API key that was defined in the Add-RocketCyberBaseUri &amp; Add-RocketCyberApiKey cmdlets</maml:para>
           <maml:para>The full base uri test path in this example is:     http://myapi.gateway.celerium.org/id</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html</maml:uri>
+        <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html</maml:linkText>
+        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

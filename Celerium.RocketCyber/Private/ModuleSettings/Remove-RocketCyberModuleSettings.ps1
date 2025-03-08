@@ -64,7 +64,7 @@ function Remove-RocketCyberModuleSettings {
             Remove-Item -Path $RocketCyberConfigPath -Recurse -Force -WhatIf:$WhatIfPreference
 
             If ($AndVariables) {
-                Remove-RocketCyberAPIKey
+                Remove-RocketCyberApiKey
                 Remove-RocketCyberBaseUri
             }
 

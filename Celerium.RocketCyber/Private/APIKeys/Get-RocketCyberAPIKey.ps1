@@ -1,22 +1,22 @@
-function Get-RocketCyberAPIKey {
+function Get-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Gets the RocketCyber API key
 
     .DESCRIPTION
-        The Get-RocketCyberAPIKey cmdlet gets the RocketCyber API key
+        The Get-RocketCyberApiKey cmdlet gets the RocketCyber API key
         global variable and returns it as a SecureString
 
     .PARAMETER AsPlainText
         Decrypt and return the API key in plain text
 
     .EXAMPLE
-        Get-RocketCyberAPIKey
+        Get-RocketCyberApiKey
 
         Gets the RocketCyber API key and returns it as a SecureString
 
     .EXAMPLE
-        Get-RocketCyberAPIKey -AsPlainText
+        Get-RocketCyberApiKey -AsPlainText
 
         Gets and decrypts the API key from the global variable and
         returns the API key in plain text
@@ -25,11 +25,11 @@ function Get-RocketCyberAPIKey {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html
 #>
 
     [CmdletBinding()]
-    [alias( "Get-RCAPIKey" )]
+    [alias( "Get-RCApiKey" )]
     Param (
         [Parameter(Mandatory = $false) ]
         [Switch]$AsPlainText
@@ -51,7 +51,7 @@ function Get-RocketCyberAPIKey {
 
             }
             else{
-                Write-Warning 'The RocketCyber API key is not set. Run Add-RocketCyberAPIKey to set the API key.'
+                Write-Warning 'The RocketCyber API key is not set. Run Add-RocketCyberApiKey to set the API key.'
             }
         }
         catch {

@@ -101,7 +101,7 @@ param (
 
     AfterAll{
 
-        Remove-RocketCyberAPIKey -WarningAction SilentlyContinue
+        Remove-RocketCyberApiKey -WarningAction SilentlyContinue
 
         if (Get-Module -Name $ModuleName) {
             Remove-Module -Name $ModuleName -Force

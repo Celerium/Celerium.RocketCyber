@@ -67,7 +67,7 @@ function Add-RocketCyberBaseUri {
             Default {}
         }
 
-        Set-Variable -Name 'RocketCyberModuleBaseURI' -Value $BaseUri -Option ReadOnly -Scope Global -Force
+        Set-Variable -Name 'RocketCyberModuleBaseUri' -Value $BaseUri -Option ReadOnly -Scope Global -Force
 
     }
 

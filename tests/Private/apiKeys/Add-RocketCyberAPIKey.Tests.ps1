@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .DESCRIPTION
-        Pester tests for the Celerium.RocketCyber APIKeys functions
+        Pester tests for the Celerium.RocketCyber ApiKeys functions
 
     .PARAMETER ModuleName
         The name of the local module to import
@@ -18,12 +18,12 @@
             'Built', 'NotBuilt'
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Get-RocketCyberAPIKey.Tests.ps1
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Get-RocketCyberApiKey.Tests.ps1
 
         Runs a pester test and outputs simple results
 
     .EXAMPLE
-        Invoke-Pester -Path .\Tests\Private\APIKeys\Get-RocketCyberAPIKey.Tests.ps1 -Output Detailed
+        Invoke-Pester -Path .\Tests\Private\ApiKeys\Get-RocketCyberApiKey.Tests.ps1 -Output Detailed
 
         Runs a pester test and outputs detailed results
 
@@ -102,7 +102,7 @@ param (
 
     AfterAll{
 
-        Remove-RocketCyberAPIKey -WarningAction SilentlyContinue
+        Remove-RocketCyberApiKey -WarningAction SilentlyContinue
 
         if (Get-Module -Name $ModuleName) {
             Remove-Module -Name $ModuleName -Force
@@ -122,24 +122,24 @@ param (
 #EndRegion  [ Prerequisites ]
 
 
-Describe "Testing the [ $BuildTarget ] version of [ $CommandName ] functions with [ $PesterTestName ]" -Tag @('APIKeys') {
+Describe "Testing the [ $BuildTarget ] version of [ $CommandName ] functions with [ $PesterTestName ]" -Tag @('ApiKeys') {
 
     Context "[ $CommandName ] testing functions" {
 
         It "[ $CommandName ] should have an alias" {
-            Get-Alias -Name Set-RCAPIKey | Should -BeTrue
-            Get-Alias -Name Add-RCAPIKey | Should -BeTrue
-            Get-Alias -Name Set-RocketCyberAPIKey | Should -BeTrue
+            Get-Alias -Name Set-RCApiKey | Should -BeTrue
+            Get-Alias -Name Add-RCApiKey | Should -BeTrue
+            Get-Alias -Name Set-RocketCyberApiKey | Should -BeTrue
         }
 
         It "[ -ApiKey ] should accept a value from the pipeline" {
-            "Celerium.RocketCyberKey" | Add-RocketCyberAPIKey
-            Get-RocketCyberAPIKey | Should -Not -BeNullOrEmpty
+            "Celerium.RocketCyberKey" | Add-RocketCyberApiKey
+            Get-RocketCyberApiKey | Should -Not -BeNullOrEmpty
         }
 
         It "[ -ApiKey ] should accept input" {
-            Add-RocketCyberAPIKey -ApiKey '12345'
-            Get-RocketCyberAPIKey | Should -Not -BeNullOrEmpty
+            Add-RocketCyberApiKey -ApiKey '12345'
+            Get-RocketCyberApiKey | Should -Not -BeNullOrEmpty
         }
 
     }

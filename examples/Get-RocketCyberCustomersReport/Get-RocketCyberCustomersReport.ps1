@@ -7,7 +7,7 @@
 
         This is a proof of concept script. It is not intended to be used in production.
 
-    .PARAMETER APIKey
+    .PARAMETER ApiKey
         Enter in the RocketCyber API key for authentication
 
     .PARAMETER APIEndPoint
@@ -24,17 +24,17 @@
         Switch statement to open the report folder after the script runs.
 
     .EXAMPLE
-        Get-RocketCyberCustomersReport -APIKey 12345 -id 12345
+        Get-RocketCyberCustomersReport -ApiKey 12345 -id 12345
 
         Gets all Customers from the RocketCyber API and sends the data to a CSV file.
 
     .EXAMPLE
-        Get-RocketCyberCustomersReport -APIKey 12345 -id 12345 -Report HTML
+        Get-RocketCyberCustomersReport -ApiKey 12345 -id 12345 -Report HTML
 
         Gets all Customers from the RocketCyber API and sends the data to a HTML file.
 
     .EXAMPLE
-        Get-RocketCyberCustomersReport -APIKey 12345 -id 12345 -Report All
+        Get-RocketCyberCustomersReport -ApiKey 12345 -id 12345 -Report All
 
         Gets all customers from the RocketCyber API and sends the data to both a CSV & HTML file.
 
@@ -107,7 +107,7 @@ Write-Output "Start - $(Get-Date -Format yyyy-MM-dd-HH:mm)"
 
     #Settings RocketCyber login information
     Add-RocketCyberBaseUri -BaseUri $APIEndpoint
-    Add-RocketCyberAPIKey $APIKey -ErrorAction Stop
+    Add-RocketCyberApiKey $ApiKey -ErrorAction Stop
 
 
 

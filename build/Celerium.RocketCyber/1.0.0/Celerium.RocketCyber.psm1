@@ -1,4 +1,4 @@
-﻿#Region '.\Private\APICalls\ConvertTo-RocketCyberQueryString.ps1' -1
+﻿#Region '.\Private\ApiCalls\ConvertTo-RocketCyberQueryString.ps1' -1
 
 function ConvertTo-RocketCyberQueryString {
 <#
@@ -79,7 +79,7 @@ function ConvertTo-RocketCyberQueryString {
         }
 
         # Build the request and load it with the query string
-        $uri_Request        = [System.UriBuilder]($RocketCyberModuleBaseURI + $ResourceUri)
+        $uri_Request        = [System.UriBuilder]($RocketCyberModuleBaseUri + $ResourceUri)
         $uri_Request.Query  = $QueryParameters.ToString()
 
         return $uri_Request
@@ -89,8 +89,8 @@ function ConvertTo-RocketCyberQueryString {
     end {}
 
 }
-#EndRegion '.\Private\APICalls\ConvertTo-RocketCyberQueryString.ps1' 90
-#Region '.\Private\APICalls\Invoke-RocketCyberRequest.ps1' -1
+#EndRegion '.\Private\ApiCalls\ConvertTo-RocketCyberQueryString.ps1' 90
+#Region '.\Private\ApiCalls\Invoke-RocketCyberRequest.ps1' -1
 
 function Invoke-RocketCyberRequest {
 <#
@@ -120,7 +120,7 @@ function Invoke-RocketCyberRequest {
         This allows for the full uri query to occur
 
         The full resource path is made with the following data
-        $RocketCyberModuleBaseURI + $ResourceUri + ConvertTo-RocketCyberQueryString
+        $RocketCyberModuleBaseUri + $ResourceUri + ConvertTo-RocketCyberQueryString
 
     .PARAMETER Data
         Place holder parameter to use when other methods are supported
@@ -195,7 +195,7 @@ function Invoke-RocketCyberRequest {
         Set-Variable -Name $QueryParameterName -Value $QueryString -Scope Global -Force
 
         try {
-            $ApiToken = Get-RocketCyberAPIKey -AsPlainText
+            $ApiToken = Get-RocketCyberApiKey -AsPlainText
 
             $Parameters = [ordered] @{
                 "Method"    = $Method
@@ -206,7 +206,7 @@ function Invoke-RocketCyberRequest {
 
             if ($AllResults) {
 
-                Write-Verbose "Gathering all items from [  $( $RocketCyberModuleBaseURI + $ResourceUri ) ] "
+                Write-Verbose "Gathering all items from [  $( $RocketCyberModuleBaseUri + $ResourceUri ) ] "
 
                 $PageNumber = 1
                 $AllResponseData = [System.Collections.Generic.List[object]]::new()
@@ -282,16 +282,16 @@ function Invoke-RocketCyberRequest {
     end {}
 
 }
-#EndRegion '.\Private\APICalls\Invoke-RocketCyberRequest.ps1' 191
-#Region '.\Private\APIKeys\Add-RocketCyberAPIKey.ps1' -1
+#EndRegion '.\Private\ApiCalls\Invoke-RocketCyberRequest.ps1' 191
+#Region '.\Private\ApiKeys\Add-RocketCyberApiKey.ps1' -1
 
-function Add-RocketCyberAPIKey {
+function Add-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Sets your API key used to authenticate all API calls
 
     .DESCRIPTION
-        The Add-RocketCyberAPIKey cmdlet sets your API key which is used to
+        The Add-RocketCyberApiKey cmdlet sets your API key which is used to
         authenticate all API calls made to RocketCyber. Once the API key is
         defined, it is encrypted using SecureString
 
@@ -308,29 +308,29 @@ function Add-RocketCyberAPIKey {
         Input a SecureString object containing the API key
 
     .EXAMPLE
-        Add-RocketCyberAPIKey
+        Add-RocketCyberApiKey
 
         Prompts to enter in the API key
 
     .EXAMPLE
-        Add-RocketCyberAPIKey -ApiKey 'your_ApiKey'
+        Add-RocketCyberApiKey -ApiKey 'your_ApiKey'
 
         The RocketCyber API will use the string entered into the [ -ApiKey ] parameter
 
     .EXAMPLE
-        '12345' | Add-RocketCyberAPIKey
+        '12345' | Add-RocketCyberApiKey
 
-        The Add-RocketCyberAPIKey function will use the string passed into it as its API key
+        The Add-RocketCyberApiKey function will use the string passed into it as its API key
 
     .NOTES
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html
 #>
 
     [CmdletBinding()]
-    [alias( "Add-RCAPIKey", "Set-RCAPIKey", "Set-RocketCyberAPIKey" )]
+    [alias( "Add-RCApiKey", "Set-RCApiKey", "Set-RocketCyberApiKey" )]
     Param (
         [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'AsPlainText')]
         [ValidateNotNullOrEmpty()]
@@ -371,28 +371,28 @@ function Add-RocketCyberAPIKey {
 
     end {}
 }
-#EndRegion '.\Private\APIKeys\Add-RocketCyberAPIKey.ps1' 87
-#Region '.\Private\APIKeys\Get-RocketCyberAPIKey.ps1' -1
+#EndRegion '.\Private\ApiKeys\Add-RocketCyberApiKey.ps1' 87
+#Region '.\Private\ApiKeys\Get-RocketCyberApiKey.ps1' -1
 
-function Get-RocketCyberAPIKey {
+function Get-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Gets the RocketCyber API key
 
     .DESCRIPTION
-        The Get-RocketCyberAPIKey cmdlet gets the RocketCyber API key
+        The Get-RocketCyberApiKey cmdlet gets the RocketCyber API key
         global variable and returns it as a SecureString
 
     .PARAMETER AsPlainText
         Decrypt and return the API key in plain text
 
     .EXAMPLE
-        Get-RocketCyberAPIKey
+        Get-RocketCyberApiKey
 
         Gets the RocketCyber API key and returns it as a SecureString
 
     .EXAMPLE
-        Get-RocketCyberAPIKey -AsPlainText
+        Get-RocketCyberApiKey -AsPlainText
 
         Gets and decrypts the API key from the global variable and
         returns the API key in plain text
@@ -401,11 +401,11 @@ function Get-RocketCyberAPIKey {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html
 #>
 
     [CmdletBinding()]
-    [alias( "Get-RCAPIKey" )]
+    [alias( "Get-RCApiKey" )]
     Param (
         [Parameter(Mandatory = $false) ]
         [Switch]$AsPlainText
@@ -427,7 +427,7 @@ function Get-RocketCyberAPIKey {
 
             }
             else{
-                Write-Warning 'The RocketCyber API key is not set. Run Add-RocketCyberAPIKey to set the API key.'
+                Write-Warning 'The RocketCyber API key is not set. Run Add-RocketCyberApiKey to set the API key.'
             }
         }
         catch {
@@ -444,19 +444,19 @@ function Get-RocketCyberAPIKey {
     end{}
 
 }
-#EndRegion '.\Private\APIKeys\Get-RocketCyberAPIKey.ps1' 71
-#Region '.\Private\APIKeys\Remove-RocketCyberAPIKey.ps1' -1
+#EndRegion '.\Private\ApiKeys\Get-RocketCyberApiKey.ps1' 71
+#Region '.\Private\ApiKeys\Remove-RocketCyberApiKey.ps1' -1
 
-function Remove-RocketCyberAPIKey {
+function Remove-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Removes the RocketCyber API key
 
     .DESCRIPTION
-        The Remove-RocketCyberAPIKey cmdlet removes the RocketCyber API key
+        The Remove-RocketCyberApiKey cmdlet removes the RocketCyber API key
 
     .EXAMPLE
-        Remove-RocketCyberAPIKey
+        Remove-RocketCyberApiKey
 
         Removes the RocketCyber API key
 
@@ -464,11 +464,11 @@ function Remove-RocketCyberAPIKey {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html
 #>
 
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'None')]
-    [alias("Remove-RCAPIKey")]
+    [alias("Remove-RCApiKey")]
     Param ()
 
     begin {}
@@ -489,18 +489,18 @@ function Remove-RocketCyberAPIKey {
     end{}
 
 }
-#EndRegion '.\Private\APIKeys\Remove-RocketCyberAPIKey.ps1' 43
-#Region '.\Private\APIKeys\Test-RocketCyberAPIKey.ps1' -1
+#EndRegion '.\Private\ApiKeys\Remove-RocketCyberApiKey.ps1' 43
+#Region '.\Private\ApiKeys\Test-RocketCyberApiKey.ps1' -1
 
-function Test-RocketCyberAPIKey {
+function Test-RocketCyberApiKey {
 <#
     .SYNOPSIS
         Test the RocketCyber API key
 
     .DESCRIPTION
-        The Test-RocketCyberAPIKey cmdlet tests the base URI & API
+        The Test-RocketCyberApiKey cmdlet tests the base URI & API
         key that was defined in the
-        Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+        Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
     .PARAMETER BaseUri
         Define the base URI for the RocketCyber API connection using RocketCyber's URI or a custom URI
@@ -514,7 +514,7 @@ function Test-RocketCyberAPIKey {
         Test-RocketCyberBaseUri -id 12345
 
         Tests the base URI & API key that was defined in the
-        Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+        Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
         The default full base uri test path is:
             https://api-us.rocketcyber.com/v3/account/id
@@ -523,7 +523,7 @@ function Test-RocketCyberAPIKey {
         Test-RocketCyberBaseUri -BaseUri http://myapi.gateway.celerium.org -id 12345
 
         Tests the base URI & API key that was defined in the
-        Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+        Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
         The full base uri test path in this example is:
             http://myapi.gateway.celerium.org/id
@@ -532,14 +532,14 @@ function Test-RocketCyberAPIKey {
         N\A
 
     .LINK
-        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html
+        https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html
 #>
 
     [CmdletBinding()]
-    [alias("Test-RCAPIKey")]
+    [alias("Test-RCApiKey")]
     Param (
         [Parameter(Mandatory = $false) ]
-        [string]$BaseUri = $RocketCyberModuleBaseURI
+        [string]$BaseUri = $RocketCyberModuleBaseUri
     )
 
     begin { $ResourceUri = "/account" }
@@ -550,7 +550,7 @@ function Test-RocketCyberAPIKey {
 
         try {
 
-            $ApiToken = Get-RocketCyberAPIKey -AsPlainText
+            $ApiToken = Get-RocketCyberApiKey -AsPlainText
 
             $RocketCyberHeaders = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
             $RocketCyberHeaders.Add("Content-Type", 'application/json')
@@ -588,8 +588,8 @@ function Test-RocketCyberAPIKey {
     end {}
 
 }
-#EndRegion '.\Private\APIKeys\Test-RocketCyberAPIKey.ps1' 97
-#Region '.\Private\BaseUri\Add-RocketCyberBaseURI.ps1' -1
+#EndRegion '.\Private\ApiKeys\Test-RocketCyberApiKey.ps1' 97
+#Region '.\Private\BaseUri\Add-RocketCyberBaseUri.ps1' -1
 
 function Add-RocketCyberBaseUri {
 <#
@@ -660,14 +660,14 @@ function Add-RocketCyberBaseUri {
             Default {}
         }
 
-        Set-Variable -Name 'RocketCyberModuleBaseURI' -Value $BaseUri -Option ReadOnly -Scope Global -Force
+        Set-Variable -Name 'RocketCyberModuleBaseUri' -Value $BaseUri -Option ReadOnly -Scope Global -Force
 
     }
 
     end {}
 }
-#EndRegion '.\Private\BaseUri\Add-RocketCyberBaseURI.ps1' 76
-#Region '.\Private\BaseUri\Get-RocketCyberBaseURI.ps1' -1
+#EndRegion '.\Private\BaseUri\Add-RocketCyberBaseUri.ps1' 76
+#Region '.\Private\BaseUri\Get-RocketCyberBaseUri.ps1' -1
 
 function Get-RocketCyberBaseUri {
 <#
@@ -697,8 +697,8 @@ function Get-RocketCyberBaseUri {
 
     process {
 
-        switch ([bool]$RocketCyberModuleBaseURI) {
-            $true   { $RocketCyberModuleBaseURI }
+        switch ([bool]$RocketCyberModuleBaseUri) {
+            $true   { $RocketCyberModuleBaseUri }
             $false  { Write-Warning "The RocketCyber base URI is not set. Run Add-RocketCyberBaseUri to set the base URI." }
         }
 
@@ -706,8 +706,8 @@ function Get-RocketCyberBaseUri {
 
     end {}
 }
-#EndRegion '.\Private\BaseUri\Get-RocketCyberBaseURI.ps1' 38
-#Region '.\Private\BaseUri\Remove-RocketCyberBaseURI.ps1' -1
+#EndRegion '.\Private\BaseUri\Get-RocketCyberBaseUri.ps1' 38
+#Region '.\Private\BaseUri\Remove-RocketCyberBaseUri.ps1' -1
 
 function Remove-RocketCyberBaseUri {
 <#
@@ -737,10 +737,10 @@ function Remove-RocketCyberBaseUri {
 
     process {
 
-        switch ([bool]$RocketCyberModuleBaseURI) {
+        switch ([bool]$RocketCyberModuleBaseUri) {
             $true   {
-                if ($PSCmdlet.ShouldProcess('RocketCyberModuleBaseURI')) {
-                    Remove-Variable -Name "RocketCyberModuleBaseURI" -Scope Global -Force
+                if ($PSCmdlet.ShouldProcess('RocketCyberModuleBaseUri')) {
+                    Remove-Variable -Name "RocketCyberModuleBaseUri" -Scope Global -Force
                 }
             }
             $false  { Write-Warning "The RocketCyber base URI variable is not set. Nothing to remove" }
@@ -751,7 +751,7 @@ function Remove-RocketCyberBaseUri {
     end {}
 
 }
-#EndRegion '.\Private\BaseUri\Remove-RocketCyberBaseURI.ps1' 43
+#EndRegion '.\Private\BaseUri\Remove-RocketCyberBaseUri.ps1' 43
 #Region '.\Private\ModuleSettings\Export-RocketCyberModuleSettings.ps1' -1
 
 function Export-RocketCyberModuleSettings {
@@ -819,7 +819,7 @@ function Export-RocketCyberModuleSettings {
         $RocketCyberConfig = Join-Path -Path $RocketCyberConfigPath -ChildPath $RocketCyberConfigFile
 
         # Confirm variables exist and are not null before exporting
-        if ($RocketCyberModuleBaseURI -and $RocketCyberModuleApiKey) {
+        if ($RocketCyberModuleBaseUri -and $RocketCyberModuleApiKey) {
             $SecureString = $RocketCyberModuleApiKey | ConvertFrom-SecureString
 
             if ($IsWindows -or $PSEdition -eq 'Desktop') {
@@ -830,7 +830,7 @@ function Export-RocketCyberModuleSettings {
             }
 @"
     @{
-        RocketCyberModuleBaseURI            = '$RocketCyberModuleBaseURI'
+        RocketCyberModuleBaseUri            = '$RocketCyberModuleBaseUri'
         RocketCyberModuleApiKey             = '$SecureString'
     }
 "@ | Out-File -FilePath $RocketCyberConfig -Force
@@ -1009,11 +1009,11 @@ function Import-RocketCyberModuleSettings {
             $TempConfig = Import-LocalizedData -BaseDirectory $RocketCyberConfigPath -FileName $RocketCyberConfigFile
 
                 # Send to function to strip potentially superfluous slash (/)
-                Add-RocketCyberBaseUri $TempConfig.RocketCyberModuleBaseURI
+                Add-RocketCyberBaseUri $TempConfig.RocketCyberModuleBaseUri
 
                 $TempConfig.RocketCyberModuleApiKey = ConvertTo-SecureString $TempConfig.RocketCyberModuleApiKey
 
-                Set-Variable -Name 'RocketCyberModuleBaseURI' -Value $TempConfig.RocketCyberModuleBaseURI -Option ReadOnly -Scope Global -Force
+                Set-Variable -Name 'RocketCyberModuleBaseUri' -Value $TempConfig.RocketCyberModuleBaseUri -Option ReadOnly -Scope Global -Force
 
                 Set-Variable -Name 'RocketCyberModuleApiKey' -Value $TempConfig.RocketCyberModuleApiKey -Option ReadOnly -Scope Global -Force
 
@@ -1023,11 +1023,11 @@ function Import-RocketCyberModuleSettings {
             Remove-Variable "TempConfig"
         }
         else {
-            Write-Verbose "No configuration file found at [ $RocketCyberConfig ] run Add-RocketCyberAPIKey & Add-RocketCyberBaseUri to get started."
+            Write-Verbose "No configuration file found at [ $RocketCyberConfig ] run Add-RocketCyberApiKey & Add-RocketCyberBaseUri to get started."
 
             Add-RocketCyberBaseUri
 
-            Set-Variable -Name "RocketCyberModuleBaseURI" -Value $(Get-RocketCyberBaseUri) -Option ReadOnly -Scope Global -Force
+            Set-Variable -Name "RocketCyberModuleBaseUri" -Value $(Get-RocketCyberBaseUri) -Option ReadOnly -Scope Global -Force
         }
 
     }
@@ -1109,7 +1109,7 @@ function Remove-RocketCyberModuleSettings {
             Remove-Item -Path $RocketCyberConfigPath -Recurse -Force -WhatIf:$WhatIfPreference
 
             If ($AndVariables) {
-                Remove-RocketCyberAPIKey
+                Remove-RocketCyberApiKey
                 Remove-RocketCyberBaseUri
             }
 

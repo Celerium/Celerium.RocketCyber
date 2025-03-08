@@ -26,8 +26,8 @@ function Get-RocketCyberBaseUri {
 
     process {
 
-        switch ([bool]$RocketCyberModuleBaseURI) {
-            $true   { $RocketCyberModuleBaseURI }
+        switch ([bool]$RocketCyberModuleBaseUri) {
+            $true   { $RocketCyberModuleBaseUri }
             $false  { Write-Warning "The RocketCyber base URI is not set. Run Add-RocketCyberBaseUri to set the base URI." }
         }
 

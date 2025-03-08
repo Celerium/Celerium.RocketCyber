@@ -139,25 +139,25 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Mo
 
         It "Saved configuration should be removed" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -WarningAction SilentlyContinue
             Remove-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath
 
             Test-Path -Path $ExportPath | Should -BeFalse
-            [bool](Get-Variable -Name RocketCyberModuleBaseURI -ErrorAction SilentlyContinue)   | Should -BeTrue
+            [bool](Get-Variable -Name RocketCyberModuleBaseUri -ErrorAction SilentlyContinue)   | Should -BeTrue
             [bool](Get-Variable -Name RocketCyberModuleApiKey -ErrorAction SilentlyContinue)    | Should -BeTrue
         }
 
         It "Saved configuration & variables should be removed" {
             Add-RocketCyberBaseUri
-            Add-RocketCyberAPIKey -ApiKey '12345'
+            Add-RocketCyberApiKey -ApiKey '12345'
 
             Export-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -WarningAction SilentlyContinue
             Remove-RocketCyberModuleSettings -RocketCyberConfigPath $ExportPath -andVariables
 
             Test-Path -Path $ExportPath | Should -BeFalse
-            [bool](Get-Variable -Name RocketCyberModuleBaseURI -ErrorAction SilentlyContinue)   | Should -BeFalse
+            [bool](Get-Variable -Name RocketCyberModuleBaseUri -ErrorAction SilentlyContinue)   | Should -BeFalse
             [bool](Get-Variable -Name RocketCyberApiKey -ErrorAction SilentlyContinue)    | Should -BeFalse
         }
 

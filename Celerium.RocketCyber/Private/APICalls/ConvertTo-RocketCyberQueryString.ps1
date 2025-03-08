@@ -77,7 +77,7 @@ function ConvertTo-RocketCyberQueryString {
         }
 
         # Build the request and load it with the query string
-        $uri_Request        = [System.UriBuilder]($RocketCyberModuleBaseURI + $ResourceUri)
+        $uri_Request        = [System.UriBuilder]($RocketCyberModuleBaseUri + $ResourceUri)
         $uri_Request.Query  = $QueryParameters.ToString()
 
         return $uri_Request

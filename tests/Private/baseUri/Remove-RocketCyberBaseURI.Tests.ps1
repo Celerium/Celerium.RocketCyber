@@ -101,7 +101,7 @@ param (
 
     AfterAll{
 
-        Remove-RocketCyberAPIKey -WarningAction SilentlyContinue
+        Remove-RocketCyberApiKey -WarningAction SilentlyContinue
 
         if (Get-Module -Name $ModuleName) {
             Remove-Module -Name $ModuleName -Force
@@ -128,7 +128,7 @@ Describe "Testing [ $CommandName ] function with [ $PesterTestName ]" -Tag @('Ba
         It "The BaseUri variable should not longer exist" {
             Add-RocketCyberBaseUri
             Remove-RocketCyberBaseUri
-            $RocketCyberModuleBaseURI | Should -BeNullOrEmpty
+            $RocketCyberModuleBaseUri | Should -BeNullOrEmpty
         }
 
         It "If the BaseUri is already gone a warning should be thrown" {

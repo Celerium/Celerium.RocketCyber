@@ -2,13 +2,13 @@
 external help file: Celerium.RocketCyber-help.xml
 grand_parent: Internal
 Module Name: Celerium.RocketCyber
-online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html
+online version: https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html
 parent: GET
 schema: 2.0.0
-title: Test-RocketCyberAPIKey
+title: Test-RocketCyberApiKey
 ---
 
-# Test-RocketCyberAPIKey
+# Test-RocketCyberApiKey
 
 ## SYNOPSIS
 Test the RocketCyber API key
@@ -16,13 +16,13 @@ Test the RocketCyber API key
 ## SYNTAX
 
 ```powershell
-Test-RocketCyberAPIKey [[-BaseUri] <String>] [<CommonParameters>]
+Test-RocketCyberApiKey [[-BaseUri] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Test-RocketCyberAPIKey cmdlet tests the base URI & API
+The Test-RocketCyberApiKey cmdlet tests the base URI & API
 key that was defined in the
-Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
 ## EXAMPLES
 
@@ -32,7 +32,7 @@ Test-RocketCyberBaseUri -id 12345
 ```
 
 Tests the base URI & API key that was defined in the
-Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
 The default full base uri test path is:
     https://api-us.rocketcyber.com/v3/account/id
@@ -43,7 +43,7 @@ Test-RocketCyberBaseUri -BaseUri http://myapi.gateway.celerium.org -id 12345
 ```
 
 Tests the base URI & API key that was defined in the
-Add-RocketCyberBaseUri & Add-RocketCyberAPIKey cmdlets
+Add-RocketCyberBaseUri & Add-RocketCyberApiKey cmdlets
 
 The full base uri test path in this example is:
     http://myapi.gateway.celerium.org/id
@@ -62,7 +62,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: $RocketCyberModuleBaseURI
+Default value: $RocketCyberModuleBaseUri
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -79,5 +79,5 @@ N\A
 
 ## RELATED LINKS
 
-[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberAPIKey.html)
+[https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html](https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html)
 

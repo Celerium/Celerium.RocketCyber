@@ -67,11 +67,11 @@ function Import-RocketCyberModuleSettings {
             $TempConfig = Import-LocalizedData -BaseDirectory $RocketCyberConfigPath -FileName $RocketCyberConfigFile
 
                 # Send to function to strip potentially superfluous slash (/)
-                Add-RocketCyberBaseUri $TempConfig.RocketCyberModuleBaseURI
+                Add-RocketCyberBaseUri $TempConfig.RocketCyberModuleBaseUri
 
                 $TempConfig.RocketCyberModuleApiKey = ConvertTo-SecureString $TempConfig.RocketCyberModuleApiKey
 
-                Set-Variable -Name 'RocketCyberModuleBaseURI' -Value $TempConfig.RocketCyberModuleBaseURI -Option ReadOnly -Scope Global -Force
+                Set-Variable -Name 'RocketCyberModuleBaseUri' -Value $TempConfig.RocketCyberModuleBaseUri -Option ReadOnly -Scope Global -Force
 
                 Set-Variable -Name 'RocketCyberModuleApiKey' -Value $TempConfig.RocketCyberModuleApiKey -Option ReadOnly -Scope Global -Force
 
@@ -81,11 +81,11 @@ function Import-RocketCyberModuleSettings {
             Remove-Variable "TempConfig"
         }
         else {
-            Write-Verbose "No configuration file found at [ $RocketCyberConfig ] run Add-RocketCyberAPIKey & Add-RocketCyberBaseUri to get started."
+            Write-Verbose "No configuration file found at [ $RocketCyberConfig ] run Add-RocketCyberApiKey & Add-RocketCyberBaseUri to get started."
 
             Add-RocketCyberBaseUri
 
-            Set-Variable -Name "RocketCyberModuleBaseURI" -Value $(Get-RocketCyberBaseUri) -Option ReadOnly -Scope Global -Force
+            Set-Variable -Name "RocketCyberModuleBaseUri" -Value $(Get-RocketCyberBaseUri) -Option ReadOnly -Scope Global -Force
         }
 
     }

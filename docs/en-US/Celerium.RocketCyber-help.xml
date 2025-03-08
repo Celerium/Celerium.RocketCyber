@@ -100,10 +100,6 @@
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
-        <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Accounts/Get-RocketCyberAccount.html</maml:uri>
-      </maml:navigationLink>
-      <maml:navigationLink>
         <maml:linkText>https://celerium.github.io/Celerium.RocketCyber/site/Account/Get-RocketCyberAccount.html</maml:linkText>
         <maml:uri>https://celerium.github.io/Celerium.RocketCyber/site/Account/Get-RocketCyberAccount.html</maml:uri>
       </maml:navigationLink>

@@ -1,5 +1,5 @@
 ---
 title: POST
-parent: Accounts
+parent: Account
 has_children: true
 ---

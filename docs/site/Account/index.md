@@ -1,9 +1,9 @@
 ---
-title: Accounts
+title: Account
 has_children: true
 ---
 
-## Accounts - endpoint help & documentation
+## Account - endpoint help & documentation
 
 {: .highlight }
 Some functions will handle more than one endpoint and the numbers below show the total endpoints **not** the total functions

@@ -24,7 +24,7 @@ Converts uri filter parameters
 ### [Export-RocketCyberModuleSettings](site/Internal/Export-RocketCyberModuleSettings.md)
 Exports the RocketCyber BaseUri, API, & JSON configuration information to file
 
-### [Get-RocketCyberAccount](site/Accounts/Get-RocketCyberAccount.md)
+### [Get-RocketCyberAccount](site/Account/Get-RocketCyberAccount.md)
 Gets account information for a given ID
 
 ### [Get-RocketCyberAgent](site/Agents/Get-RocketCyberAgent.md)

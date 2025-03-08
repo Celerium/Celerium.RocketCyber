@@ -1,8 +1,8 @@
 ---
 external help file: Celerium.RocketCyber-help.xml
-grand_parent: Accounts
+grand_parent: Account
 Module Name: Celerium.RocketCyber
-online version: https://celerium.github.io/Celerium.RocketCyber/site/Accounts/Get-RocketCyberAccount.html
+online version: https://celerium.github.io/Celerium.RocketCyber/site/Account/Get-RocketCyberAccount.html
 parent: GET
 schema: 2.0.0
 title: Get-RocketCyberAccount

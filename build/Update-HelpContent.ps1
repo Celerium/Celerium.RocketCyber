@@ -162,19 +162,23 @@ Try{
     }
 
     if ($IsWindows -or $PSEdition -eq 'Desktop') {
-        $rootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('\build', [System.StringComparison]::OrdinalIgnoreCase)) )"
+        $RootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('\build', [System.StringComparison]::OrdinalIgnoreCase)) )"
     }
     else{
-        $rootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('/build', [System.StringComparison]::OrdinalIgnoreCase)) )"
+        $RootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('/build', [System.StringComparison]::OrdinalIgnoreCase)) )"
     }
 
     Write-Verbose "2"
 
-    $modulePath = Join-Path -Path $rootPath -ChildPath $ModuleName
-    $modulePsd1 = Join-Path -Path $modulePath -ChildPath "$ModuleName.psd1"
+    Write-Verbose "RootPath     - $RootPath"
+    Write-Verbose "ModulePath   - $ModulePath"
+    Write-Verbose "ModuleName   - $ModuleName"
 
-        if (Test-Path -Path $modulePsd1 ) {
-            Import-Module -Name $modulePsd1 -Force -Verbose:$false
+    $ModulePath = Join-Path -Path $RootPath -ChildPath $ModuleName
+    $ModulePsd1 = Join-Path -Path $ModulePath -ChildPath "$ModuleName.psd1"
+
+        if (Test-Path -Path $ModulePsd1 ) {
+            Import-Module -Name $ModulePsd1 -Force -Verbose:$false
             $Commands = Get-Command -Module $ModuleName -ErrorAction Stop | Where-Object {$_.CommandType -eq 'Function'} | Sort-Object Name
         }
         else{
@@ -182,13 +186,6 @@ Try{
         }
 
     Write-Verbose "3"
-
-    Write-Verbose "HelpDocs     - $HelpDocsPath"
-    Write-Verbose "DocFolders   - $DocFolders"
-
-    ForEach ($Folder in $DocFolders) {
-        Write-Verbose "Folder   - $Folder"
-    }
 
     ForEach ($Folder in $DocFolders) {
 

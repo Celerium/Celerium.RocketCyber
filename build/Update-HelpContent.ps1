@@ -292,7 +292,7 @@ ForEach ( $Cmdlet in $Commands ) {
 
         $template_Path = $(Join-Path -Path $CategoryPath -ChildPath $Template)
 
-        if ($Template -ne 'index.md') {
+        if ($Template -ne 'Index.md') {
             $fileContents = @"
 ---
 title: $( ($Template -replace '.md','').ToUpper())
@@ -323,7 +323,7 @@ Have a look around and if you would like to contribute please read over the [Con
 "@
         }
 
-        if( $Template -eq 'index.md' ) {
+        if( $Template -eq 'Index.md' ) {
             New-Item -Path $template_Path -ItemType File -Value $fileContents -Force > $null
         }
         else{
@@ -335,7 +335,7 @@ Have a look around and if you would like to contribute please read over the [Con
         $newContent = $content -replace 'xxparentxx',"$Category"
         $newContent | Set-Content -Path $template_Path
 
-        if( $Template -eq 'index.md' ) {
+        if( $Template -eq 'Index.md' ) {
 
             $Counts = 'xdeleteCountx', 'xgetCountx', 'xpostCountx', 'xputCountx'
             ForEach ($Count in $Counts) {

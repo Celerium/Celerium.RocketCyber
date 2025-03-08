@@ -171,11 +171,13 @@ Try{
     Write-Verbose "2"
 
     Write-Verbose "RootPath     - $RootPath"
-    Write-Verbose "ModulePath   - $ModulePath"
     Write-Verbose "ModuleName   - $ModuleName"
 
     $ModulePath = Join-Path -Path $RootPath -ChildPath $ModuleName
     $ModulePsd1 = Join-Path -Path $ModulePath -ChildPath "$ModuleName.psd1"
+
+    Write-Verbose "ModulePath   - $ModulePath"
+    Write-Verbose "ModulePsd1   - $ModulePsd1"
 
         if (Test-Path -Path $ModulePsd1 ) {
             Import-Module -Name $ModulePsd1 -Force -Verbose:$false

@@ -21,12 +21,12 @@ function Update-HelpContent {
 
 .DESCRIPTION
     The Update-HelpContent script updates or creates markdown help files which are
-    used by both Github pages and as external help.
+    used by both Github pages and as external help
 
     The markdown documents created contain metadata that GitHub pages directly use
-    to build its entire documentation structure\site.
+    to build its entire documentation structure\site
 
-    This also generates external XML\cab help files.
+    This also generates external XML\cab help files
         - 2022-11: More research is needed to fully implement external help
 
 .PARAMETER ModuleName
@@ -37,7 +37,7 @@ function Update-HelpContent {
 .PARAMETER HelpDocsPath
     Location to store the markdown help docs
 
-    All markdown help docs should be located outside the module folder.
+    All markdown help docs should be located outside the module folder
     Reference:
         Yes - "Celerium.RocketCyber\docs"
         NO  - "Celerium.RocketCyber\Celerium.RocketCyber\docs"
@@ -71,7 +71,7 @@ function Update-HelpContent {
 
     Updates markdown docs and external help files
 
-    No progress information is sent to the console while the script is running.
+    No progress information is sent to the console while the script is running
 
 .EXAMPLE
     .\Update-HelpContent.ps1
@@ -83,7 +83,7 @@ function Update-HelpContent {
 
     Updates markdown docs and external help files
 
-    Progress information is sent to the console while the script is running.
+    Progress information is sent to the console while the script is running
 
 .INPUTS
     N\A
@@ -140,19 +140,17 @@ if ($GithubPageUri[$GithubPageUri.Length-1] -eq "/" -or $GithubPageUri[$GithubPa
     $GithubPageUri = $GithubPageUri.Substring(0,$GithubPageUri.Length-1)
 }
 
-$modulePage         = Join-Path -Path $HelpDocsPath -ChildPath "$ModuleName.md"
-$tempFolder         = Join-Path -Path $HelpDocsPath -ChildPath "temp"
-$siteStructureFolder= Join-Path -Path $HelpDocsPath -ChildPath "site"
-$externalHelp       = Join-Path -Path $HelpDocsPath -ChildPath "en-US"
-$externalHelpCab    = Join-Path -Path $HelpDocsPath -ChildPath "cab"
+$ModulePage         = Join-Path -Path $HelpDocsPath -ChildPath "$ModuleName.md"
+$TempFolder         = Join-Path -Path $HelpDocsPath -ChildPath "temp"
+$SiteStructureFolder= Join-Path -Path $HelpDocsPath -ChildPath "site"
+$ExternalHelp       = Join-Path -Path $HelpDocsPath -ChildPath "en-US"
+$ExternalHelpCab    = Join-Path -Path $HelpDocsPath -ChildPath "cab"
 
-$docFolders = $HelpDocsPath,$tempFolder,$siteStructureFolder,$externalHelp,$externalHelpCab
+$DocFolders = $HelpDocsPath,$TempFolder,$SiteStructureFolder,$ExternalHelp,$ExternalHelpCab
 
 $TemplatePages = 'DELETE.md', 'GET.md', 'Index.md', 'POST.md', 'PUT.md'
 
 Try{
-
-    Write-Verbose "1"
 
     if (Get-InstalledModule -Name platyPS -ErrorAction SilentlyContinue -Verbose:$false 4>$null) {
         Import-Module -Name platyPS -Verbose:$false
@@ -162,42 +160,36 @@ Try{
     }
 
     if ($IsWindows -or $PSEdition -eq 'Desktop') {
-        $rootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('\build', [System.StringComparison]::OrdinalIgnoreCase)) )"
+        $RootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('\build', [System.StringComparison]::OrdinalIgnoreCase)) )"
     }
     else{
-        $rootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('/build', [System.StringComparison]::OrdinalIgnoreCase)) )"
+        $RootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('/build', [System.StringComparison]::OrdinalIgnoreCase)) )"
     }
 
-    Write-Verbose "2"
+    $ModulePath = Join-Path -Path $RootPath -ChildPath $ModuleName
+    $ModulePsd1 = Join-Path -Path $ModulePath -ChildPath "$ModuleName.psd1"
 
-    $modulePath = Join-Path -Path $rootPath -ChildPath $ModuleName
-    $modulePsd1 = Join-Path -Path $modulePath -ChildPath "$ModuleName.psd1"
-
-        if (Test-Path -Path $modulePsd1 ) {
-            Import-Module -Name $modulePsd1 -Force -Verbose:$false
+        if (Test-Path -Path $ModulePsd1 ) {
+            Import-Module -Name $ModulePsd1 -Force -Verbose:$false
             $Commands = Get-Command -Module $ModuleName -ErrorAction Stop | Where-Object {$_.CommandType -eq 'Function'} | Sort-Object Name
         }
         else{
             throw "The [ $ModuleName ] module was not found"
         }
 
-    Write-Verbose "3"
+    ForEach ($Folder in $DocFolders) {
 
-    ForEach ($folder in $docFolders) {
-
-        if ( ($folder -ne $HelpDocsPath) -and (Test-Path -Path $folder -PathType Container) ) {
-            Remove-Item -Path $folder -Force -Recurse
-            New-Item -Path $folder -ItemType Directory > $null
+        if ( ($Folder -ne $HelpDocsPath) -and (Test-Path -Path $Folder -PathType Container) ) {
+            Remove-Item -Path $Folder -Force -Recurse
+            New-Item -Path $Folder -ItemType Directory > $null
         }
         else{
-            if ( (Test-Path -Path $folder -PathType Container) -eq $false ) {
-                New-Item -Path $folder -ItemType Directory > $null
+            if ( (Test-Path -Path $Folder -PathType Container) -eq $false ) {
+                New-Item -Path $Folder -ItemType Directory > $null
             }
         }
 
     }
-
-    Write-Verbose "4"
 
     if ( (Test-Path -Path $CsvFilePath -PathType Leaf) -eq $false ) {
         throw "The required CSV file was not found at [ $CsvFilePath ]"
@@ -218,11 +210,11 @@ Write-Verbose " - (2/4) - $(Get-Date -Format MM-dd-HH:mm) - Regenerating module 
 
 #Region     [ Base module help ]
 
-New-MarkdownHelp -Module $ModuleName -WithModulePage -ModulePagePath $modulePage -OutputFolder $tempFolder -Force > $null
+New-MarkdownHelp -Module $ModuleName -WithModulePage -ModulePagePath $ModulePage -OutputFolder $TempFolder -Force > $null
 
-    Update-MarkdownHelpModule -Path $tempFolder -RefreshModulePage -ModulePagePath $modulePage > $null
+    Update-MarkdownHelpModule -Path $TempFolder -RefreshModulePage -ModulePagePath $ModulePage > $null
 
-    Remove-Item -Path $tempFolder -Recurse -Force > $null
+    Remove-Item -Path $TempFolder -Recurse -Force > $null
 
 Write-Verbose " -       - $(Get-Date -Format MM-dd-HH:mm) - Updating module metadata"
 
@@ -232,12 +224,12 @@ $downloadLink = "$GithubPageUri/docs/cab"
     #Add GitHub pages parent
     $content = Get-Content -Path $ModulePage
     $newContent = $content -replace "Module Name", "parent: Home `nModule Name"
-    $newContent | Set-Content -Path $modulePage
+    $newContent | Set-Content -Path $ModulePage
 
     #Adjust module download links
     $content = Get-Content -Path $ModulePage
     $newContent = $content -replace "(?<=Download Help Link:).*", " $DownloadLink"
-    $newContent | Set-Content -Path $modulePage
+    $newContent | Set-Content -Path $ModulePage
 
     #Adjust module description
     $moduleDescription = 'This PowerShell module acts as a wrapper for the RocketCyber API.'
@@ -245,7 +237,7 @@ $downloadLink = "$GithubPageUri/docs/cab"
     $content = Get-Content -Path $ModulePage -Raw
     [regex]$updateDescription = "{{ Fill in the Description }}"
     $newContent = $updateDescription.replace($content, "$moduleDescription", 1)
-    $newContent | Set-Content -Path $modulePage -NoNewline
+    $newContent | Set-Content -Path $ModulePage -NoNewline
 
 #EndRegion  [ Base module help ]
 
@@ -258,7 +250,7 @@ ForEach ( $Cmdlet in $Commands ) {
     #Helps avoid files in use by another process error
     Start-Sleep -Milliseconds 250
 
-    $CsvData = $CSV | Where-Object {$_.Function -like "*$($Cmdlet.Name)"}
+    $CsvData = $CSV | Where-Object {$_.Function -like "*$($Cmdlet.Name)*"}
 
     $Category = $($CsvData.Category | Select-Object -Unique)
         if ($null -eq $Category) {
@@ -271,7 +263,7 @@ ForEach ( $Cmdlet in $Commands ) {
             Write-Warning " -       - $(Get-Date -Format MM-dd-HH:mm) - Unique command found, manually adjust the CSV file & metadata for [ $($Cmdlet.Name) ]"
         }
 
-    $CategoryPath = Join-Path -Path $siteStructureFolder -ChildPath $Category
+    $CategoryPath = Join-Path -Path $SiteStructureFolder -ChildPath $Category
         if ( (Test-Path -Path $CategoryPath -PathType Container) -eq $false ) {
             New-Item -Path $CategoryPath -ItemType Directory > $null
         }
@@ -285,9 +277,9 @@ ForEach ( $Cmdlet in $Commands ) {
     New-MarkdownHelp -Command $Cmdlet -Metadata $newMetadata -OnlineVersionUrl $onlineVersion -OutputFolder $CategoryPath -Force > $null
 
     #Adjust module uri links
-    $content = Get-Content -Path $modulePage
+    $content = Get-Content -Path $ModulePage
     $newContent = $content -replace "$($Cmdlet.Name + '.md')","site/$Category/$($Cmdlet.Name + '.md')"
-    $newContent | Set-Content -Path $modulePage
+    $newContent | Set-Content -Path $ModulePage
 
     #Adjust module powershell code fence
     $content = Get-Content -Path $( Join-Path -Path $CategoryPath -ChildPath "$($Cmdlet.Name + '.md')" ) -Raw
@@ -378,16 +370,16 @@ Write-Verbose " - (4/4) - $(Get-Date -Format MM-dd-HH:mm) - Regenerating externa
 if ($IsWindows -or $PSEdition -eq 'Desktop') {
 
     $helpFilePaths = [System.Collections.Generic.List[object]]::new()
-    $helpFiles = (Get-ChildItem -Path $siteStructureFolder -Include "*.md" -Exclude index*,delete*,post*,put*,get.* -Recurse | Sort-Object fullName).fullName
+    $helpFiles = (Get-ChildItem -Path $SiteStructureFolder -Include "*.md" -Exclude index*,delete*,post*,put*,get.* -Recurse | Sort-Object fullName).fullName
 
         ForEach ($File in $helpFiles) {
             $helpFilePaths.Add($File) > $null
         }
 
-    New-ExternalHelp -Path $helpFilePaths -OutputPath $externalHelp -Force > $null
+    New-ExternalHelp -Path $helpFilePaths -OutputPath $ExternalHelp -Force > $null
 
 
-    New-ExternalHelpCab -CabFilesFolder $externalHelp -LandingPagePath $modulePage -OutputFolder $externalHelpCab -IncrementHelpVersion > $null
+    New-ExternalHelpCab -CabFilesFolder $ExternalHelp -LandingPagePath $ModulePage -OutputFolder $ExternalHelpCab -IncrementHelpVersion > $null
 
 }
 else{

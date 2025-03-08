@@ -152,8 +152,6 @@ $TemplatePages = 'DELETE.md', 'GET.md', 'Index.md', 'POST.md', 'PUT.md'
 
 Try{
 
-    Write-Verbose "1"
-
     if (Get-InstalledModule -Name platyPS -ErrorAction SilentlyContinue -Verbose:$false 4>$null) {
         Import-Module -Name platyPS -Verbose:$false
     }
@@ -168,32 +166,16 @@ Try{
         $RootPath = "$( $PSCommandPath.Substring(0, $PSCommandPath.IndexOf('/build', [System.StringComparison]::OrdinalIgnoreCase)) )"
     }
 
-    Write-Verbose "2"
-
-    Write-Verbose "RootPath     - $RootPath"
-    Write-Verbose "ModuleName   - $ModuleName"
-
     $ModulePath = Join-Path -Path $RootPath -ChildPath $ModuleName
     $ModulePsd1 = Join-Path -Path $ModulePath -ChildPath "$ModuleName.psd1"
 
-    Write-Verbose "ModulePath   - $ModulePath"
-    Write-Verbose "ModulePsd1   - $ModulePsd1"
-
         if (Test-Path -Path $ModulePsd1 ) {
-
-            Write-Verbose "Importing Module - $ModuleName"
-
             Import-Module -Name $ModulePsd1 -Force #-Verbose:$false
-
-            Write-Verbose "Getting Commands"
-
             $Commands = Get-Command -Module $ModuleName -ErrorAction Stop | Where-Object {$_.CommandType -eq 'Function'} | Sort-Object Name
         }
         else{
             throw "The [ $ModuleName ] module was not found"
         }
-
-    Write-Verbose "3"
 
     ForEach ($Folder in $DocFolders) {
 
@@ -208,8 +190,6 @@ Try{
         }
 
     }
-
-    Write-Verbose "4"
 
     if ( (Test-Path -Path $CsvFilePath -PathType Leaf) -eq $false ) {
         throw "The required CSV file was not found at [ $CsvFilePath ]"

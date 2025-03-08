@@ -20,7 +20,7 @@
 .DESCRIPTION
     Pester tests for the PowerShell help comments.
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the local module to import
 
 .PARAMETER Version

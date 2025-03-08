@@ -5,7 +5,7 @@
     .DESCRIPTION
         Pester tests for the Celerium.RocketCyber BaseUri functions
 
-    .PARAMETER moduleName
+    .PARAMETER ModuleName
         The name of the local module to import
 
     .PARAMETER Version

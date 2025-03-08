@@ -19,7 +19,7 @@
 .DESCRIPTION
     Pester tests for the Celerium.RocketCyber module manifest file.
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the local module to import
 
 .PARAMETER Version

@@ -19,7 +19,7 @@
     The Publish-CeleriumModule script publishes a PowerShell module
     to the PowerShell Gallery
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the module to update help docs for
 
     Default value: Celerium.RocketCyber

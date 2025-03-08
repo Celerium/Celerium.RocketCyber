@@ -19,7 +19,7 @@
     The PSScriptAnalyzer.tests.ps1 script test every rule against
     every module file
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the local module to import
 
 .PARAMETER Version

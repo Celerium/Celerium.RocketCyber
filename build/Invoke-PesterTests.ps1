@@ -19,7 +19,7 @@
 .DESCRIPTION
     Invoke Pester tests against all functions in a module
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the local module to import
 
     Default value: Celerium.RocketCyber
@@ -49,7 +49,7 @@
 
 
 .EXAMPLE
-    .\Invoke-PesterTests -moduleName Celerium.RocketCyber -Version 1.2.3
+    .\Invoke-PesterTests -ModuleName Celerium.RocketCyber -Version 1.2.3
 
     Runs various pester tests against all functions in the module
     and outputs the results to the console
@@ -133,7 +133,7 @@ catch {
 #Region     [ Pester Configuration ]
 
 $pesterContainer_params = @{
-    'moduleName'        = $ModuleName;
+    'ModuleName'        = $ModuleName;
     'version'           = $Version;
     'buildTarget'       = $BuildTarget
 }

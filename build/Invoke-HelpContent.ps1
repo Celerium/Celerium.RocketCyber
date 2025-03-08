@@ -19,18 +19,18 @@
     The Invoke-HelpContent script calls the Update-HelpContent function to
     update module markdown help files
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the module to update help docs for
 
-.PARAMETER githubPageUri
+.PARAMETER GithubPageUri
     The github project url to inject into help docs
 
 .EXAMPLE
     .\Invoke-HelpContent.ps1
-        -moduleName Celerium.RocketCyber
-        -helpDocsPath "C:\Celerium\Projects\Celerium.RocketCyber\docs"
-        -csvFilePath "C:\Celerium\Projects\Celerium.RocketCyber\docs\Endpoints.csv"
-        -githubPageUri "https://celerium.github.io/Celerium.RocketCyber"
+        -ModuleName Celerium.RocketCyber
+        -HelpDocsPath "C:\Celerium\Projects\Celerium.RocketCyber\docs"
+        -CsvFilePath "C:\Celerium\Projects\Celerium.RocketCyber\docs\Endpoints.csv"
+        -GithubPageUri "https://celerium.github.io/Celerium.RocketCyber"
 
     Updates markdown docs and external help files
 
@@ -63,7 +63,7 @@
 
         [Parameter(Mandatory=$false)]
         [ValidateNotNullOrEmpty()]
-        [String]$githubPageUri = "https://celerium.github.io/Celerium.RocketCyber"
+        [String]$GithubPageUri = "https://celerium.github.io/Celerium.RocketCyber"
     )
 
 #EndRegion  [ Parameters ]
@@ -92,11 +92,11 @@ try {
     Import-Module $( Join-Path -Path $RootPath -ChildPath 'build\Update-HelpContent.ps1' ) -Force -Verbose:$false
 
     $parameters = @{
-        moduleName      = $ModuleName
-        helpDocsPath    = Join-Path -Path $RootPath -ChildPath 'docs'
-        csvFilePath     = Join-Path -Path $RootPath -ChildPath 'docs\Endpoints.csv'
-        githubPageUri   = $githubPageUri
-        verbose         = $true
+        ModuleName      = $ModuleName
+        HelpDocsPath    = Join-Path -Path $RootPath -ChildPath 'docs'
+        CsvFilePath     = Join-Path -Path $RootPath -ChildPath 'docs\Endpoints.csv'
+        GithubPageUri   = $GithubPageUri
+        Verbose         = $true
     }
 
     Update-HelpContent @parameters

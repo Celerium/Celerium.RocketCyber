@@ -19,7 +19,7 @@
     The Invoke-ModuleBuild.ps1 script builds & prepares a PowerShell
     module for deployment
 
-.PARAMETER moduleName
+.PARAMETER ModuleName
     The name of the module to build
 
     Example: Celerium.RocketCyber
@@ -33,8 +33,8 @@
 .EXAMPLE
     .\Invoke-ModuleBuild.ps1 -Version 1.2.3
 
-    Compiles the module files located in ..\moduleName and builds
-    a combined module in ...\build\moduleName\1.2.3
+    Compiles the module files located in ..\ModuleName and builds
+    a combined module in ...\build\ModuleName\1.2.3
 
 .INPUTS
     N\A

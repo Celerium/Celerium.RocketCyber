@@ -1,3 +1,16 @@
+---
+external help file: Celerium.RocketCyber-help.xml
+Module Name: Celerium.RocketCyber
+online version: https://github.com/Celerium/Celerium.RocketCyber
+schema: 2.0.0
+title: Home
+has_children: true
+layout: default
+nav_order: 1
+---
+
+# RocketCyber API PowerShell Wrapper
+
 <h1 align="center">
   <br>
   <a href="http://Celerium.org"><img src="https://raw.githubusercontent.com/Celerium/Celerium.RocketCyber/main/.github/images/Celerium_PoSHGallery_Celerium.RocketCyber.png" alt="_CeleriumDemo" width="200"></a>
@@ -128,14 +141,14 @@ Calling an API resource is as simple as running `Get-RocketCyber<resourceName>`
 
 | API Resource       | Create    | Read                              | Update    | Delete    |
 | -----------------  | --------- | --------------------------------- | --------- | --------- |
-| Account            | -         | `Get-RocketCyberAccount`          | -         | -         |
-| Agents             | -         | `Get-RocketCyberAgent`            | -         | -         |
-| Apps               | -         | `Get-RocketCyberApp`              | -         | -         |
+| Account            | -         | `Get-RocketCyberAccount`         | -         | -         |
+| Agents             | -         | `Get-RocketCyberAgent`           | -         | -         |
+| Apps               | -         | `Get-RocketCyberApp`             | -         | -         |
 | Defender           | -         | `Get-RocketCyberDefender`         | -         | -         |
-| Events             | -         | `Get-RocketCyberEvent`            | -         | -         |
-| EventSummary       | -         | `Get-RocketCyberEvent`            | -         | -         |
-| Firewalls          | -         | `Get-RocketCyberFirewall`         | -         | -         |
-| Incidents          | -         | `Get-RocketCyberIncident`         | -         | -         |
+| Events             | -         | `Get-RocketCyberEvent`           | -         | -         |
+| EventSummary       | -         | `Get-RocketCyberEvent`           | -         | -         |
+| Firewalls          | -         | `Get-RocketCyberFirewall`        | -         | -         |
+| Incidents          | -         | `Get-RocketCyberIncident`        | -         | -         |
 | Office             | -         | `Get-RocketCyberOffice`           | -         | -         |
 
 Each `Get-RocketCyber*` function will respond with the raw data that RocketCyber's API provides.

@@ -2,11 +2,11 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  VMImage: ubuntu-latest
 
 variables:
-  version: 2.1.0
-  moduleName: Celerium.RocketCyber
+  Version: 2.1.0
+  ModuleName: Celerium.RocketCyber
 
 jobs:
 
@@ -15,7 +15,7 @@ jobs:
   - job: Window_PowerShell
     timeoutInMinutes: 10
     pool:
-      vmImage: 'windows-latest'
+      VMImage: 'windows-latest'
 
     steps:
     - task: PowerShell@2
@@ -42,7 +42,7 @@ jobs:
         pwsh: false
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-ModuleBuild.ps1
-        arguments: -version $(version)
+        arguments: -Version $(Version)
 
     - task: PowerShell@2
       displayName: Testing__Invoke-PesterTests
@@ -51,21 +51,21 @@ jobs:
         pwsh: false
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-PesterTests.ps1
-        arguments: -version $(version) -buildTarget built
+        arguments: -Version $(Version) -BuildTarget Built
 
     - task: PublishBuildArtifacts@1
       displayName: Publish Artifact
       name: PublishArtifact
       inputs:
-        ArtifactName: $(moduleName)-$(version)
-        PathtoPublish: $(Build.SourcesDirectory)/build/$(moduleName)/$(version)
+        ArtifactName: $(ModuleName)-$(Version)
+        PathtoPublish: $(Build.SourcesDirectory)/build/$(ModuleName)/$(Version)
 
 # Windows - Core
 
   - job: Window_PowerShell_Core
     timeoutInMinutes: 10
     pool:
-      vmImage: 'windows-latest'
+      VMImage: 'windows-latest'
 
     steps:
     - task: PowerShell@2
@@ -91,7 +91,7 @@ jobs:
         pwsh: true
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-ModuleBuild.ps1
-        arguments: -version $(version)
+        arguments: -Version $(Version)
 
     - task: PowerShell@2
       displayName: Testing__Invoke-PesterTests
@@ -100,21 +100,21 @@ jobs:
         pwsh: true
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-PesterTests.ps1
-        arguments: -version $(version) -buildTarget built
+        arguments: -Version $(Version) -BuildTarget Built
 
     - task: PublishBuildArtifacts@1
       displayName: Publish Artifact
       name: PublishArtifact
       inputs:
-        ArtifactName: $(moduleName)-$(version)
-        PathtoPublish: $(Build.SourcesDirectory)/build/$(moduleName)/$(version)
+        ArtifactName: $(ModuleName)-$(Version)
+        PathtoPublish: $(Build.SourcesDirectory)/build/$(ModuleName)/$(Version)
 
 # Linux - Ubuntu
 
   - job: Ubuntu
     timeoutInMinutes: 10
     pool:
-      vmImage: 'ubuntu-latest'
+      VMImage: 'ubuntu-latest'
 
     steps:
     - task: PowerShell@2
@@ -140,7 +140,7 @@ jobs:
         pwsh: true
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-ModuleBuild.ps1
-        arguments: -version $(version)
+        arguments: -Version $(Version)
 
     - task: PowerShell@2
       displayName: Testing__Invoke-PesterTests
@@ -149,21 +149,21 @@ jobs:
         pwsh: true
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-PesterTests.ps1
-        arguments: -version $(version) -buildTarget built
+        arguments: -Version $(Version) -BuildTarget Built
 
     - task: PublishBuildArtifacts@1
       displayName: Publish Artifact
       name: PublishArtifact
       inputs:
-        ArtifactName: $(moduleName)-$(version)
-        PathtoPublish: $(Build.SourcesDirectory)/build/$(moduleName)/$(version)
+        ArtifactName: $(ModuleName)-$(Version)
+        PathtoPublish: $(Build.SourcesDirectory)/build/$(ModuleName)/$(Version)
 
 # Linux - macOS
 
   - job: macOS
     timeoutInMinutes: 10
     pool:
-      vmImage: 'macOS-latest'
+      VMImage: 'macOS-latest'
 
     steps:
     - task: PowerShell@2
@@ -189,7 +189,7 @@ jobs:
         pwsh: true
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-ModuleBuild.ps1
-        arguments: -version $(version)
+        arguments: -Version $(Version)
 
     - task: PowerShell@2
       displayName: Testing__Invoke-PesterTests
@@ -198,11 +198,11 @@ jobs:
         pwsh: true
         targetType: filePath
         filePath: $(Build.SourcesDirectory)/build/Invoke-PesterTests.ps1
-        arguments: -version $(version) -buildTarget built
+        arguments: -Version $(Version) -BuildTarget Built
 
     - task: PublishBuildArtifacts@1
       displayName: Publish Artifact
       name: PublishArtifact
       inputs:
-        ArtifactName: $(moduleName)-$(version)
-        PathtoPublish: $(Build.SourcesDirectory)/build/$(moduleName)/$(version)
+        ArtifactName: $(ModuleName)-$(Version)
+        PathtoPublish: $(Build.SourcesDirectory)/build/$(ModuleName)/$(Version)

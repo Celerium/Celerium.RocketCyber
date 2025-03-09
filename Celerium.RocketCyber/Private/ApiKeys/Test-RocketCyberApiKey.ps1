@@ -62,7 +62,7 @@ function Test-RocketCyberApiKey {
             $RocketCyberHeaders.Add("Content-Type", 'application/json')
             $RocketCyberHeaders.Add('Authorization', "Bearer $ApiToken")
 
-            $rest_output = Invoke-WebRequest -Method Get -Uri ($BaseUri + $ResourceUri) -Headers $RocketCyberHeaders -ErrorAction Stop
+            $RestOutput = Invoke-WebRequest -Method Get -Uri ($BaseUri + $ResourceUri) -Headers $RocketCyberHeaders -ErrorAction Stop
         }
         catch {
 
@@ -78,9 +78,9 @@ function Test-RocketCyberApiKey {
             Remove-Variable -Name 'RocketCyberHeaders' -Force
         }
 
-        if ($rest_output) {
+        if ($RestOutput) {
             $data = @{}
-            $data = $rest_output
+            $data = $RestOutput
 
             [PSCustomObject]@{
                 StatusCode          = $data.StatusCode

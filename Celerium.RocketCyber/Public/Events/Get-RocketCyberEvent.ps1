@@ -31,6 +31,8 @@ function Get-RocketCyberEvent {
     .PARAMETER EventSummary
         Shows summary of events for each app
 
+        AccountId cannot be an array when using this parameter
+
     .PARAMETER Details
         This parameter allows users to target specific attributes within the Details object
 
@@ -119,8 +121,8 @@ function Get-RocketCyberEvent {
         [ValidateSet( 'informational', 'suspicious', 'malicious' )]
         [String[]]$Verdict,
 
-        [Parameter(Mandatory = $false, ParameterSetName = 'IndexByEvent')]
-        [Parameter(Mandatory = $false, ParameterSetName = 'IndexByEventSummary')]
+        [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'IndexByEvent')]
+        [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'IndexByEventSummary')]
         [ValidateRange(1, [int64]::MaxValue)]
         [Int64[]]$AccountId,
 
@@ -189,7 +191,7 @@ function Get-RocketCyberEvent {
         Set-Variable -Name $ParameterName -Value $PSBoundParameters -Scope Global -Force -Confirm:$false
         Set-Variable -Name $QueryParameterName -Value $UriParameters -Scope Global -Force -Confirm:$false
 
-        return Invoke-RocketCyberRequest -Method GET -ResourceUri $ResourceUri -UriFilter $UriParameters
+        return Invoke-RocketCyberRequest -Method GET -ResourceUri $ResourceUri -UriFilter $UriParameters -AllResults:$AllResults
 
     }
 

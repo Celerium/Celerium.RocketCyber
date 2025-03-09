@@ -170,7 +170,7 @@ Try{
     $ModulePsd1 = Join-Path -Path $ModulePath -ChildPath "$ModuleName.psd1"
 
         if (Test-Path -Path $ModulePsd1 ) {
-            Import-Module -Name $ModulePsd1 -Force #-Verbose:$false
+            Import-Module -Name $ModulePsd1 -Force -Verbose:$false
             $Commands = Get-Command -Module $ModuleName -ErrorAction Stop | Where-Object {$_.CommandType -eq 'Function'} | Sort-Object Name
         }
         else{

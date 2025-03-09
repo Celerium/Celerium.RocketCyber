@@ -115,7 +115,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-RocketCyberAgent cmdlet gets all the device information for all devices associated to the account ID provided.</maml:para>
+      <maml:para>The Get-RocketCyberAgent cmdlet gets all the device information for all devices associated to the account ID provided</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -716,7 +716,7 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Get-RocketCyberApp</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>AccountId</maml:name>
           <maml:description>
             <maml:para>The account ID to pull data for</maml:para>
@@ -746,7 +746,7 @@
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>AccountId</maml:name>
         <maml:description>
           <maml:para>The account ID to pull data for</maml:para>
@@ -929,7 +929,7 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>AccountId</maml:name>
           <maml:description>
             <maml:para>The account id associated to the device</maml:para>
@@ -1026,7 +1026,7 @@
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-RocketCyberEvent</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>AccountId</maml:name>
           <maml:description>
             <maml:para>The account id associated to the device</maml:para>
@@ -1044,6 +1044,7 @@
           <maml:name>EventSummary</maml:name>
           <maml:description>
             <maml:para>Shows summary of events for each app</maml:para>
+            <maml:para>AccountId cannot be an array when using this parameter</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -1080,7 +1081,7 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>AccountId</maml:name>
         <maml:description>
           <maml:para>The account id associated to the device</maml:para>
@@ -1098,6 +1099,7 @@
         <maml:name>EventSummary</maml:name>
         <maml:description>
           <maml:para>Shows summary of events for each app</maml:para>
+          <maml:para>AccountId cannot be an array when using this parameter</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -3289,12 +3291,12 @@
             <maml:para>The account ID to pull data for</maml:para>
             <maml:para>If not provided, data will be pulled for all accounts accessible by the key</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Int64[]</command:parameterValue>
           <dev:type>
-            <maml:name>Int64</maml:name>
+            <maml:name>Int64[]</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>0</dev:defaultValue>
+          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -3305,12 +3307,12 @@
           <maml:para>The account ID to pull data for</maml:para>
           <maml:para>If not provided, data will be pulled for all accounts accessible by the key</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Int64</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Int64[]</command:parameterValue>
         <dev:type>
-          <maml:name>Int64</maml:name>
+          <maml:name>Int64[]</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>0</dev:defaultValue>
+        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes />

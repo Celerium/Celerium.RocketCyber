@@ -16,7 +16,7 @@ Gets office information from the RocketCyber API
 ## SYNTAX
 
 ```powershell
-Get-RocketCyberOffice [[-AccountId] <Int64>] [<CommonParameters>]
+Get-RocketCyberOffice [[-AccountId] <Int64[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,13 +56,13 @@ If not provided, data will be pulled for all accounts
 accessible by the key
 
 ```yaml
-Type: Int64
+Type: Int64[]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```

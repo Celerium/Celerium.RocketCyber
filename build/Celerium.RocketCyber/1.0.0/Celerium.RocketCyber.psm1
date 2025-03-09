@@ -58,6 +58,8 @@ function ConvertTo-RocketCyberQueryString {
 
     process {
 
+        Write-Verbose "[ $FunctionName ] - Running the [ $($PSCmdlet.ParameterSetName) ] ParameterSet"
+
         $QueryParameters = [System.Web.HttpUtility]::ParseQueryString([String]::Empty)
 
         if ($UriFilter) {
@@ -89,7 +91,7 @@ function ConvertTo-RocketCyberQueryString {
     end {}
 
 }
-#EndRegion '.\Private\ApiCalls\ConvertTo-RocketCyberQueryString.ps1' 90
+#EndRegion '.\Private\ApiCalls\ConvertTo-RocketCyberQueryString.ps1' 92
 #Region '.\Private\ApiCalls\Invoke-RocketCyberRequest.ps1' -1
 
 function Invoke-RocketCyberRequest {
@@ -167,9 +169,6 @@ function Invoke-RocketCyberRequest {
         [Parameter(Mandatory = $false) ]
         [Hashtable]$UriFilter = $null,
 
-        #[Parameter(Mandatory = $false) ]
-        #[Hashtable]$Data = $null,
-
         [Parameter(Mandatory = $false) ]
         [Switch]$AllResults
 
@@ -219,8 +218,8 @@ function Invoke-RocketCyberRequest {
 
                     Write-Verbose "[ $PageNumber ] of [ $($CurrentPage.totalPages) ] pages"
 
-                        foreach ($item in $CurrentPage.data) {
-                            $AllResponseData.add($item)
+                        foreach ($Item in $CurrentPage.data) {
+                            $AllResponseData.add($Item)
                         }
 
                     $PageNumber++
@@ -235,10 +234,10 @@ function Invoke-RocketCyberRequest {
         }
         catch {
 
-            $exceptionError = $_.Exception.Message
+            $ExceptionError = $_.Exception.Message
             Write-Warning 'The [ Invoke_RocketCyberRequest_Parameters, Invoke_RocketCyberRequest_ParametersQuery, & CmdletName_Parameters ] variables can provide extra details'
 
-            switch -Wildcard ($exceptionError) {
+            switch -Wildcard ($ExceptionError) {
                 '*404*' { Write-Error "Invoke-RocketCyberRequest : [ $ResourceUri ] not found!" }
                 '*429*' { Write-Error 'Invoke-RocketCyberRequest : API rate limited' }
                 '*504*' { Write-Error "Invoke-RocketCyberRequest : Gateway Timeout" }
@@ -248,8 +247,8 @@ function Invoke-RocketCyberRequest {
         }
         finally {
 
-            $Auth = $RocketCyber_invokeParameters['headers']['Authorization']
-            $RocketCyber_invokeParameters['headers']['Authorization'] = $Auth.Substring( 0, [Math]::Min($Auth.Length, 10) ) + '*******'
+            $Auth = $Invoke_RocketCyberRequest_Parameters['headers']['Authorization']
+            $Invoke_RocketCyberRequest_Parameters['headers']['Authorization'] = $Auth.Substring( 0, [Math]::Min($Auth.Length, 10) ) + '*******'
 
         }
 
@@ -282,7 +281,7 @@ function Invoke-RocketCyberRequest {
     end {}
 
 }
-#EndRegion '.\Private\ApiCalls\Invoke-RocketCyberRequest.ps1' 191
+#EndRegion '.\Private\ApiCalls\Invoke-RocketCyberRequest.ps1' 188
 #Region '.\Private\ApiKeys\Add-RocketCyberApiKey.ps1' -1
 
 function Add-RocketCyberApiKey {
@@ -1234,7 +1233,7 @@ function Get-RocketCyberAgent {
 
     .DESCRIPTION
         The Get-RocketCyberAgent cmdlet gets all the device information
-        for all devices associated to the account ID provided.
+        for all devices associated to the account ID provided
 
     .PARAMETER AccountId
         The account id associated to the device
@@ -1475,20 +1474,8 @@ function Get-RocketCyberAgent {
                 Write-Verbose "Converting [ $EndDate ] to [ $EndTime ]"
             }
 
-            $CreatedQuery = "$StartTime | $EndTime"
+            $CreatedQuery = $StartTime + '|' + $EndTime
             $UriParameters['created']     = $CreatedQuery
-
-            <#
-                if ([bool]$StartDate -eq $true -and [bool]$EndDate -eq $true) {
-                    $CreatedQuery = $StartTime + '|' + $EndTime
-                }
-                elseif ([bool]$StartDate -eq $true -and [bool]$EndDate -eq $false) {
-                    $CreatedQuery = $StartTime + '|'
-                }
-                else{
-                    $CreatedQuery = '|' + $EndTime
-                }
-            #>
 
         }
 
@@ -1504,7 +1491,7 @@ function Get-RocketCyberAgent {
     end{}
 
 }
-#EndRegion '.\Public\Agents\Get-RocketCyberAgent.ps1' 278
+#EndRegion '.\Public\Agents\Get-RocketCyberAgent.ps1' 266
 #Region '.\Public\Apps\Get-RocketCyberApp.ps1' -1
 
 function Get-RocketCyberApp {
@@ -1559,7 +1546,7 @@ function Get-RocketCyberApp {
     [CmdletBinding(DefaultParameterSetName = 'Index')]
     [alias("Get-RCApp")]
     Param (
-        [Parameter(Mandatory = $false)]
+        [Parameter(Mandatory = $false, ValueFromPipeline = $true)]
         [ValidateRange(1, [int64]::MaxValue)]
         [Int64]$AccountId,
 
@@ -1716,6 +1703,8 @@ function Get-RocketCyberEvent {
     .PARAMETER EventSummary
         Shows summary of events for each app
 
+        AccountId cannot be an array when using this parameter
+
     .PARAMETER Details
         This parameter allows users to target specific attributes within the Details object
 
@@ -1804,8 +1793,8 @@ function Get-RocketCyberEvent {
         [ValidateSet( 'informational', 'suspicious', 'malicious' )]
         [String[]]$Verdict,
 
-        [Parameter(Mandatory = $false, ParameterSetName = 'IndexByEvent')]
-        [Parameter(Mandatory = $false, ParameterSetName = 'IndexByEventSummary')]
+        [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'IndexByEvent')]
+        [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'IndexByEventSummary')]
         [ValidateRange(1, [int64]::MaxValue)]
         [Int64[]]$AccountId,
 
@@ -1874,14 +1863,14 @@ function Get-RocketCyberEvent {
         Set-Variable -Name $ParameterName -Value $PSBoundParameters -Scope Global -Force -Confirm:$false
         Set-Variable -Name $QueryParameterName -Value $UriParameters -Scope Global -Force -Confirm:$false
 
-        return Invoke-RocketCyberRequest -Method GET -ResourceUri $ResourceUri -UriFilter $UriParameters
+        return Invoke-RocketCyberRequest -Method GET -ResourceUri $ResourceUri -UriFilter $UriParameters -AllResults:$AllResults
 
     }
 
     end{}
 
 }
-#EndRegion '.\Public\Events\Get-RocketCyberEvent.ps1' 199
+#EndRegion '.\Public\Events\Get-RocketCyberEvent.ps1' 201
 #Region '.\Public\Firewalls\Get-RocketCyberFirewall.ps1' -1
 
 function Get-RocketCyberFirewall {
@@ -2359,7 +2348,7 @@ function Get-RocketCyberOffice {
     Param (
         [Parameter(Mandatory = $false, ValueFromPipeline = $true)]
         [ValidateRange(1, [int64]::MaxValue)]
-        [Int64]$AccountId
+        [Int64[]]$AccountId
 
     )
 

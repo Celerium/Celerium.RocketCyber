@@ -118,12 +118,14 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -EventSummary
 Shows summary of events for each app
+
+AccountId cannot be an array when using this parameter
 
 ```yaml
 Type: SwitchParameter

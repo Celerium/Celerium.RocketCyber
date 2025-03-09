@@ -31,7 +31,7 @@ Get-RocketCyberAgent [-AccountId <Int64[]>] [-ID <String[]>] [-Hostname <String[
 
 ## DESCRIPTION
 The Get-RocketCyberAgent cmdlet gets all the device information
-for all devices associated to the account ID provided.
+for all devices associated to the account ID provided
 
 ## EXAMPLES
 

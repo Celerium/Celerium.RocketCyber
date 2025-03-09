@@ -73,9 +73,6 @@ function Invoke-RocketCyberRequest {
         [Parameter(Mandatory = $false) ]
         [Hashtable]$UriFilter = $null,
 
-        #[Parameter(Mandatory = $false) ]
-        #[Hashtable]$Data = $null,
-
         [Parameter(Mandatory = $false) ]
         [Switch]$AllResults
 
@@ -125,8 +122,8 @@ function Invoke-RocketCyberRequest {
 
                     Write-Verbose "[ $PageNumber ] of [ $($CurrentPage.totalPages) ] pages"
 
-                        foreach ($item in $CurrentPage.data) {
-                            $AllResponseData.add($item)
+                        foreach ($Item in $CurrentPage.data) {
+                            $AllResponseData.add($Item)
                         }
 
                     $PageNumber++
@@ -141,10 +138,10 @@ function Invoke-RocketCyberRequest {
         }
         catch {
 
-            $exceptionError = $_.Exception.Message
+            $ExceptionError = $_.Exception.Message
             Write-Warning 'The [ Invoke_RocketCyberRequest_Parameters, Invoke_RocketCyberRequest_ParametersQuery, & CmdletName_Parameters ] variables can provide extra details'
 
-            switch -Wildcard ($exceptionError) {
+            switch -Wildcard ($ExceptionError) {
                 '*404*' { Write-Error "Invoke-RocketCyberRequest : [ $ResourceUri ] not found!" }
                 '*429*' { Write-Error 'Invoke-RocketCyberRequest : API rate limited' }
                 '*504*' { Write-Error "Invoke-RocketCyberRequest : Gateway Timeout" }
@@ -154,8 +151,8 @@ function Invoke-RocketCyberRequest {
         }
         finally {
 
-            $Auth = $RocketCyber_invokeParameters['headers']['Authorization']
-            $RocketCyber_invokeParameters['headers']['Authorization'] = $Auth.Substring( 0, [Math]::Min($Auth.Length, 10) ) + '*******'
+            $Auth = $Invoke_RocketCyberRequest_Parameters['headers']['Authorization']
+            $Invoke_RocketCyberRequest_Parameters['headers']['Authorization'] = $Auth.Substring( 0, [Math]::Min($Auth.Length, 10) ) + '*******'
 
         }
 

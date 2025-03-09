@@ -42,7 +42,7 @@ function Get-RocketCyberOffice {
     Param (
         [Parameter(Mandatory = $false, ValueFromPipeline = $true)]
         [ValidateRange(1, [int64]::MaxValue)]
-        [Int64]$AccountId
+        [Int64[]]$AccountId
 
     )
 

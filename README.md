@@ -82,7 +82,7 @@ Install-Module -Name Celerium.RocketCyber
 ```
 
 - :information_source: This module supports PowerShell 5.0+ and *should* work in PowerShell Core.
-- :information_source: If you are running an older version of PowerShell, or if PowerShellGet is unavailable, you can manually download the *main* branch and place the *Celerium.RocketCyber* folder into the (default) `C:\Program Files\WindowsPowerShell\Modules` folder.
+- :information_source: If you are running an older version of PowerShell, or if PowerShellGet is unavailable, you can manually download the *main* branch and place the latest version of *Celerium.RocketCyber* from the build folder into the *(default)* `C:\Program Files\WindowsPowerShell\Modules` folder.
 
 Project documentation can be found on [Github Pages](https://celerium.github.io/Celerium.RocketCyber/)
 

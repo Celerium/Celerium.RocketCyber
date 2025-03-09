@@ -56,6 +56,8 @@ function ConvertTo-RocketCyberQueryString {
 
     process {
 
+        Write-Verbose "[ $FunctionName ] - Running the [ $($PSCmdlet.ParameterSetName) ] ParameterSet"
+
         $QueryParameters = [System.Web.HttpUtility]::ParseQueryString([String]::Empty)
 
         if ($UriFilter) {

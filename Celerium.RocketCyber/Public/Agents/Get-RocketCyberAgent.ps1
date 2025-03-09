@@ -5,7 +5,7 @@ function Get-RocketCyberAgent {
 
     .DESCRIPTION
         The Get-RocketCyberAgent cmdlet gets all the device information
-        for all devices associated to the account ID provided.
+        for all devices associated to the account ID provided
 
     .PARAMETER AccountId
         The account id associated to the device
@@ -246,20 +246,8 @@ function Get-RocketCyberAgent {
                 Write-Verbose "Converting [ $EndDate ] to [ $EndTime ]"
             }
 
-            $CreatedQuery = "$StartTime | $EndTime"
+            $CreatedQuery = $StartTime + '|' + $EndTime
             $UriParameters['created']     = $CreatedQuery
-
-            <#
-                if ([bool]$StartDate -eq $true -and [bool]$EndDate -eq $true) {
-                    $CreatedQuery = $StartTime + '|' + $EndTime
-                }
-                elseif ([bool]$StartDate -eq $true -and [bool]$EndDate -eq $false) {
-                    $CreatedQuery = $StartTime + '|'
-                }
-                else{
-                    $CreatedQuery = '|' + $EndTime
-                }
-            #>
 
         }
 

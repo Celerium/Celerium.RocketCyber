@@ -50,7 +50,7 @@ function Get-RocketCyberApp {
     [CmdletBinding(DefaultParameterSetName = 'Index')]
     [alias("Get-RCApp")]
     Param (
-        [Parameter(Mandatory = $false)]
+        [Parameter(Mandatory = $false, ValueFromPipeline = $true)]
         [ValidateRange(1, [int64]::MaxValue)]
         [Int64]$AccountId,
 

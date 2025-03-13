@@ -5,7 +5,7 @@ pool:
   VMImage: ubuntu-latest
 
 variables:
-  Version: 2.1.0
+  Version: 1.1.0
   ModuleName: Celerium.RocketCyber
 
 jobs:

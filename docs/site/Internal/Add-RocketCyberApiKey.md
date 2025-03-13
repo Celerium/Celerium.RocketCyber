@@ -15,7 +15,7 @@ Sets your API key used to authenticate all API calls
 
 ## SYNTAX
 
-### AsPlainText
+### AsPlainText (Default)
 ```powershell
 Add-RocketCyberApiKey [-ApiKey <String>] [<CommonParameters>]
 ```

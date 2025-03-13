@@ -18,7 +18,7 @@ function Remove-RocketCyberBaseUri {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberBaseUri.html
 #>
 
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'None')]
+    [CmdletBinding(DefaultParameterSetName = 'Destroy', SupportsShouldProcess, ConfirmImpact = 'None')]
     [alias("Remove-RCBaseUri")]
     Param ()
 

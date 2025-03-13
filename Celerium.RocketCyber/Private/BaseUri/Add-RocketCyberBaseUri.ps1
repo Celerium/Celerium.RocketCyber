@@ -42,7 +42,7 @@ function Add-RocketCyberBaseUri {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberBaseUri.html
 #>
 
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'Set')]
     [alias( "Add-RCBaseUri", "Set-RCBaseUri", "Set-RocketCyberBaseUri" )]
     Param (
         [Parameter(Mandatory = $false , ValueFromPipeline = $true)]

@@ -18,7 +18,7 @@ function Get-RocketCyberBaseUri {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberBaseUri.html
 #>
 
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'Index')]
     [alias("Get-RCBaseUri")]
     Param ()
 

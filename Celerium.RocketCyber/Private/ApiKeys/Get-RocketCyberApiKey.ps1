@@ -28,7 +28,7 @@ function Get-RocketCyberApiKey {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Get-RocketCyberApiKey.html
 #>
 
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'Index')]
     [alias( "Get-RCApiKey" )]
     Param (
         [Parameter(Mandatory = $false) ]

@@ -42,7 +42,7 @@ function Add-RocketCyberApiKey {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Add-RocketCyberApiKey.html
 #>
 
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'AsPlainText')]
     [alias( "Add-RCApiKey", "Set-RCApiKey", "Set-RocketCyberApiKey" )]
     Param (
         [Parameter(Mandatory = $false, ValueFromPipeline = $true, ParameterSetName = 'AsPlainText')]

@@ -45,7 +45,7 @@ function Remove-RocketCyberModuleSettings {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberModuleSettings.html
 #>
 
-    [CmdletBinding(DefaultParameterSetName = 'Destroy', SupportsShouldProcess)]
+    [CmdletBinding(DefaultParameterSetName = 'Destroy', SupportsShouldProcess, ConfirmImpact = 'None')]
     [alias("Remove-RCModuleSettings")]
     Param (
         [Parameter(Mandatory = $false, ParameterSetName = 'Destroy')]

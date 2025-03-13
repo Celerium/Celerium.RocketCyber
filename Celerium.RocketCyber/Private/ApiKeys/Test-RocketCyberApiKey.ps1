@@ -41,7 +41,7 @@ function Test-RocketCyberApiKey {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Test-RocketCyberApiKey.html
 #>
 
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'Test')]
     [alias("Test-RCApiKey")]
     Param (
         [Parameter(Mandatory = $false) ]

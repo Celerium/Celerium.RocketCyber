@@ -18,7 +18,7 @@ function Remove-RocketCyberApiKey {
         https://celerium.github.io/Celerium.RocketCyber/site/Internal/Remove-RocketCyberApiKey.html
 #>
 
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'None')]
+    [CmdletBinding(DefaultParameterSetName = 'Destroy', SupportsShouldProcess, ConfirmImpact = 'None')]
     [alias("Remove-RCApiKey")]
     Param ()
 

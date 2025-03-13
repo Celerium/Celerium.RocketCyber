@@ -420,7 +420,7 @@ function Get-RocketCyberApiKey {
 
                 if ($AsPlainText) {
                     $ApiKey = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($RocketCyberModuleApiKey)
-                    ( [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($ApiKey) ).ToString()
+                    ( [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ApiKey) ).ToString()
                 }
                 else{$RocketCyberModuleApiKey}
 
